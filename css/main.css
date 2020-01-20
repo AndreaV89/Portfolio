@@ -1,0 +1,99 @@
+/* Variables */
+
+:root {
+    --text-color-primary: #f7f7f7;
+    --text-color-secondary: #f2911b;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--text-color-primary);
+    background-color: #111111;
+}
+
+/* Main Header */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #000000;
+    flex-wrap: wrap;
+    -webkit-box-shadow: 0px 10px 30px 30px rgba(0,0,0,0.9);
+    -moz-box-shadow: 0px 10px 30px 30px rgba(0,0,0,0.9);
+    box-shadow: 0px 10px 30px 30px rgba(0,0,0,0.9);
+    margin: 10px;
+}
+
+.brand {
+    font-size: 40px;
+    margin: 0;
+}
+
+.brand span {
+    color: var(--text-color-secondary);
+}
+
+.menu {
+    background-color: #000000;
+    border: none;
+}
+
+.main-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main-nav a {
+    margin: 15px auto;
+    text-decoration: none;
+    font-size: 25px;
+    color: grey;
+}
+
+.main-nav a:hover {
+    color: var(--text-color-primary);
+    transition: color .4s ease-in;
+}
+
+.main-nav a span {
+    color: var(--text-color-secondary);
+}
+
+/* Main Container */
+
+
+.homepage {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 15px;
+}
+
+.main-container h1 {
+    font-size: 40px;
+    margin: 40px 0 10px;
+}
+
+.main-container h1 span {
+    text-transform: uppercase;
+    background: linear-gradient(to right, var(--text-color-secondary), #D93851 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main-container h2 {
+    margin: 10px 0;
+}
+
+.main-container h2 span {
+    font-size: 22px;
+    font-family: 'Share Tech Mono', monospace; 
+}
+
+/* Projects Page */
+
+.projects-page {
+    background-color: #000000;
+}
