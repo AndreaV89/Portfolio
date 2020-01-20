@@ -19,9 +19,9 @@ body {
     left: 0;
     right: 0;
     background-color: #000000;
-    -webkit-box-shadow: 0px 15px 30px 30px rgba(0,0,0,1);
-    -moz-box-shadow: 0px 15px 30px 30px rgba(0,0,0,1);
-    box-shadow: 0px 15px 30px 30px rgba(0,0,0,1);
+    -webkit-box-shadow: 0px 0px 30px 30px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 30px 30px rgba(0,0,0,1);
+    box-shadow: 0px 0px 30px 30px rgba(0,0,0,1);
     padding: 15px;
     z-index: 9999;
 }
@@ -70,16 +70,13 @@ body {
 
 /* Main Container */
 
-.main-container {
-    padding-top: 100px;
-    padding-bottom: 100px
-}
 
 .homepage {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin: 15px 15px 60px 15px;
+    width: 90%;
+    height: 100vh;
+    margin: auto;
+    padding: 100px 0 0 10px;
+    border-left: 1px solid var(--text-color-secondary);
 }
 
 .homepage h1 {
@@ -93,8 +90,7 @@ body {
 }
 
 .homepage h2 {
-    margin: 10px 0;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .main-container h2 span {
@@ -104,32 +100,28 @@ body {
 /* Projects Page */
 
 .projects-page {
-    background-color: #000000;
-    padding: 20px;
-    -webkit-box-shadow: 20px 0px 20px 20px rgba(0,0,0,1);
-    -moz-box-shadow: 20px 0px 20px 20px rgba(0,0,0,1);
-    box-shadow: 20px 0px 20px 20px rgba(0,0,0,1);
+    width: 90%;
+    margin: auto;
+    padding: 80px 0 0 10px;
+    border-left: 1px solid var(--text-color-secondary);
 }
 
 h4 {
-    margin-left: 5px;
     color: grey;
 }
-
+/*
 .projects-page h3 {
     width: 65%;
     border-bottom: 2px var(--text-color-secondary) solid;
     margin-top: 30px;
     margin-bottom: 40px;
     z-index: 99;
-}
+} */
 
 .projects-page img {
-    width: 170px;
-    position: absolute;
-    align-self: center;
+    width: 100px;
 }
-
+/*
 .projects-page div {
     height: fit-content;
     display: flex;
@@ -143,20 +135,29 @@ h4 {
 
 .projects-page div:nth-child(odd) img {
     right: 20px;
-    -webkit-box-shadow: inset -150px 0px 130px -70px rgba(0,0,0,1);
-    -moz-box-shadow: inset -150px 0px 130px -70px rgba(0,0,0,1);
-    box-shadow: inset -150px 0px 130px -70px rgba(0,0,0,1);
+} */
+
+/* About Page */
+
+.about-page {
+    width: 90%;
+    margin: auto;
+    padding: 80px 0 0 10px;
+    border-left: 1px solid var(--text-color-secondary);
+}
+
+/* Contact Page */
+
+.contact-page {
+    width: 90%;
+    margin: auto;
+    padding: 80px 0 0 10px;
+    border-left: 1px solid var(--text-color-secondary);
 }
 
 /* Media Queries */
 
 @media (min-width: 768px) {
-    main {
-        width: 90%;
-        max-width: 1200px;
-        margin: auto;
-        border-left: 2px solid var(--text-color-secondary);
-    }
     .menu-btn {
         display: none;
     }
