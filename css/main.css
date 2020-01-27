@@ -70,13 +70,12 @@ body {
 
 /* Main Container */
 
-
-.homepage {
+.homepage, .projects-page, .about-page, .contact-page {
     width: 90%;
     height: 100vh;
     margin: auto;
     padding: 100px 0 0 10px;
-    border-left: 1px solid var(--text-color-secondary);
+    border-left: 2px solid var(--text-color-secondary);
 }
 
 .homepage h1 {
@@ -99,61 +98,25 @@ body {
 
 /* Projects Page */
 
-.projects-page {
-    width: 90%;
-    margin: auto;
-    padding: 80px 0 0 10px;
-    border-left: 1px solid var(--text-color-secondary);
-}
-
 h4 {
     color: grey;
 }
-/*
-.projects-page h3 {
-    width: 65%;
-    border-bottom: 2px var(--text-color-secondary) solid;
-    margin-top: 30px;
-    margin-bottom: 40px;
-    z-index: 99;
-} */
 
-.projects-page img {
-    width: 100px;
-}
-/*
-.projects-page div {
-    height: fit-content;
-    display: flex;
-    margin: 20px 0;
+#pp-nav {
+    display: none;
 }
 
-.projects-page div:nth-child(even) h3 {
-    margin-left: auto;
-    text-align: right;
+img {
+    width: 270px;
 }
-
-.projects-page div:nth-child(odd) img {
-    right: 20px;
-} */
 
 /* About Page */
 
-.about-page {
-    width: 90%;
-    margin: auto;
-    padding: 80px 0 0 10px;
-    border-left: 1px solid var(--text-color-secondary);
-}
+
 
 /* Contact Page */
 
-.contact-page {
-    width: 90%;
-    margin: auto;
-    padding: 80px 0 0 10px;
-    border-left: 1px solid var(--text-color-secondary);
-}
+
 
 /* Media Queries */
 
@@ -169,5 +132,24 @@ h4 {
     }
     .main-nav a {
         margin: 10px 15px;
+    }
+    .homepage, .projects-page, .about-page, .contact-page {
+        width: 80%;
+        padding: 100px 30px 0 30px;
+    }
+    h4 {
+        font-size: 1.5em;
+    }
+    h3 {
+        font-size: 1.8em; 
+    }
+    .projects-container img {
+        transition: all .3s linear;
+    }
+    .projects-container img:hover {
+        -webkit-box-shadow: 0px 0px 40px 10px rgba(242,145,27,0.75);
+        -moz-box-shadow: 0px 0px 40px 10px rgba(242,145,27,0.75);
+        box-shadow: 0px 0px 40px 10px rgba(242,145,27,0.75);
+        transform: scale(1.1);
     }
 }

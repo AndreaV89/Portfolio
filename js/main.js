@@ -7,11 +7,13 @@ $(document).ready(function(){
 
 $(document).ready(function() {
     $('#pagepiling').pagepiling({
-        menu:'#menu',
-        anchors: ['section1','section2','section3','section4'],
+        menu: '#menu',
+        anchors: ['homepage','projects','about','contact'],
         sectionsColor: ['#111111','#111111','#111111','#111111'],
-        loopBottom: true
+        loopBottom: true,
     });
 });
+
+
 
     
