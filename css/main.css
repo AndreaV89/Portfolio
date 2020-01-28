@@ -8,7 +8,7 @@
 body {
     font-family: 'Roboto Condensed', sans-serif;
     color: var(--text-color-primary);
-    background-color: #111111;
+    background-color: #222222;
 }
 
 /* Main Header */
@@ -23,7 +23,7 @@ body {
     -moz-box-shadow: 0px 0px 30px 30px rgba(0,0,0,1);
     box-shadow: 0px 0px 30px 30px rgba(0,0,0,1);
     padding: 15px;
-    z-index: 9999;
+    z-index: 999;
 }
 
 .header-container {
@@ -70,9 +70,16 @@ body {
 
 /* Main Container */
 
-.homepage, .projects-page, .about-page, .contact-page {
+.homepage, .about-page, .contact-page {
     width: 90%;
     height: 100vh;
+    margin: auto;
+    padding: 100px 0 0 10px;
+    border-left: 2px solid var(--text-color-secondary);
+}
+
+.projects-page {
+    width: 90%;
     margin: auto;
     padding: 100px 0 0 10px;
     border-left: 2px solid var(--text-color-secondary);
@@ -98,6 +105,14 @@ body {
 
 /* Projects Page */
 
+.projects-container div {
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    margin: 20px auto;
+}
 h4 {
     color: grey;
 }
@@ -108,6 +123,7 @@ h4 {
 
 img {
     width: 270px;
+    margin: auto;
 }
 
 /* About Page */
@@ -116,9 +132,105 @@ img {
 
 /* Contact Page */
 
+/* Modal */
+
+#modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -100vw;
+    background-color: #222222;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+}
+
+.modal-project-img {
+    width: 100%;
+}
+
+#description-container {
+    padding: 10px;
+    flex-direction: column;
+}
+
+#btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#exit-modal {
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    position: relative;
+    margin: 0;
+    font-weight: bold;
+    color: var(--text-color-primary);
+    cursor: pointer;
+    background-color: var(--text-color-secondary);
+    border: none;
+    border-radius: 100%;
+}
+#exit-modal:hover #tooltip {
+    visibility: visible;
+}
+
+.skills {
+    color: var(--text-color-secondary);
+}
+
+.project-name, .skills, .description {
+    margin: 10px 0;
+}
+
+#code-link, #site-link {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(to right, var(--text-color-secondary), #D93851 100%);
+    color: var(--text-color-primary);
+    border-radius: 12.5px;
+    padding: 3px;
+    text-transform: uppercase;
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(242,145,27,0.75);
+    -moz-box-shadow: 0px 0px 30px 0px rgba(242,145,27,0.75);
+    box-shadow: 0px 0px 30px 0px rgba(242,145,27,0.75);
+    transition: all .5s ease-in-out;
+}
+
+#code-link:hover, #site-link:hover {
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(3,135,255,1);
+    -moz-box-shadow: 0px 0px 30px 0px rgba(3,135,255,1);
+    box-shadow: 0px 0px 30px 0px rgba(3,135,255,1);
+}
+
+#tooltip {
+    position: absolute;
+    visibility: hidden;
+    background-color: #222222;
+    width: 100px;
+    padding: 3px;
+    border-radius: 3px;
+    color: white;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -50px;
+}
 
 
 /* Media Queries */
+
+@media (min-width: 375px) {
+    .project-name, .skills, .description {
+        margin: 30px 0;
+    }
+    #code-link, #site-link {
+        padding: 10px;
+        border-radius: 20px;
+    }
+}
 
 @media (min-width: 768px) {
     .menu-btn {
@@ -151,5 +263,49 @@ img {
         -moz-box-shadow: 0px 0px 40px 10px rgba(242,145,27,0.75);
         box-shadow: 0px 0px 40px 10px rgba(242,145,27,0.75);
         transform: scale(1.1);
+    }
+    #img-container {
+        display: flex;
+    }
+    .modal-project-img {
+        width: 80%;
+        margin: 30px auto;
+        -webkit-box-shadow: 0px 0px 40px 10px rgba(0,0,0,1);
+        -moz-box-shadow: 0px 0px 40px 10px rgba(0,0,0,1);
+        box-shadow: 0px 0px 40px 10px rgba(0,0,0,1);
+    }
+    #description-container {
+        width: 80%;
+        margin: auto;
+    }
+    #code-link, #site-link {
+        width: 30%;
+    }
+}
+
+@media (min-width: 1024px) {
+    #modal {
+        display: flex;
+    }
+    #img-container {
+        width: 70%;
+    }
+    #description-container {
+        width: 30%;
+        padding: 20px;
+    }
+    .modal-project-img {
+        width: 90%;
+        height: auto;
+        margin: auto;
+    }
+    .project-name {
+        font-size: 2em;
+    }
+    .skills, .description, #code-link, #site-link {
+        font-size: 1.4em;
+    }
+    #code-link, #site-link {
+        border-radius: 23.5px;
     }
 }
