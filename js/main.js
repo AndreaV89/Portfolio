@@ -81,7 +81,7 @@ $(document).ready(function() {
         createModal(index);
         $('#modal').animate({
             right: '0'
-        })
+        }, 600)
     });
 });
 
@@ -89,9 +89,10 @@ $('#modal').on('click', '#exit-modal', function() {
     modalHTML = "";
     $('#modal').animate({
         right: '-100vw'
-    })
+    }, 600)
 });
 
+// Slide Menu
 
 $(document).ready(function(){
     $('.menu-btn').click(function(){
@@ -99,6 +100,8 @@ $(document).ready(function(){
         $('.main-nav').css('display' , 'flex');
     });
 })
+
+// PagePiling Plugin
 
 $(document).ready(function() {
     $('#pagepiling').pagepiling({
