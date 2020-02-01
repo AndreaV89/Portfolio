@@ -1,0 +1,68 @@
+// Main Header
+
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #000000;
+    -webkit-box-shadow: 0px 0px 30px 30px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 30px 30px rgba(0,0,0,1);
+    box-shadow: 0px 0px 30px 30px rgba(0,0,0,1);
+    padding: 15px;
+    z-index: 999;
+}
+
+#header-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#brand {
+    font-size: 40px;
+    margin: 0;
+}
+
+#brand span {
+    color: $text-color-secondary;
+}
+
+#menu-btn {
+    background-color: #000000;
+    border: none;
+    @include medium {
+        display: none;
+    }
+}
+
+#menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    @include medium {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        margin-left: auto;
+    }
+}
+
+#menu a {
+    margin: 15px auto;
+    text-decoration: none;
+    font-size: 25px;
+    color: grey;
+    @include medium {
+        margin: 10px 15px;
+    }
+}
+
+#menu a:hover {
+    color: $text-color-primary;
+    transition: color .4s ease-in;
+}
+
+#menu a span {
+    color: $text-color-secondary;
+}

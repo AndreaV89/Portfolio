@@ -1,0 +1,87 @@
+// Contact Page
+
+.contact-page {
+    width: 90%;
+    margin: auto;
+    padding: 30px 0 30px 10px;
+    border-left: 2px solid $text-color-secondary;
+
+    @include medium {
+        width: 80%;
+        padding: 30px;
+    }
+    @include large {
+        width: 70%;
+    }
+}
+
+#contact-container {
+    @include large {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 150px;
+    }
+}
+
+#contact-container p {
+    @include medium {
+        font-size: 20px;
+    }
+    @include large {
+        width: 100%;
+    }
+}
+
+.contacts {
+    margin: 10px 0;
+    display: flex;
+    @include large {
+        width: 30%;
+    }
+}
+
+.contacts svg {
+    width: 30px;
+    height: 30px;
+    @include medium {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.contacts a {
+    text-decoration: none;
+    color: $text-color-primary;
+}
+
+.text-link {
+    margin: 7px 0 7px 15px;
+    @include medium {
+        font-size: 20px;
+    }
+}
+
+#linkedin {
+    fill: #0e76a8;
+}
+
+#facebook {
+    fill: #3b5998;
+}
+
+#twitter {
+    fill: #1DA1F2;
+}
+
+#instagram {
+    fill: url(#rg);
+}
+
+#github {
+    fill: white;
+}
+
+#email {
+    fill: #D44638;
+}

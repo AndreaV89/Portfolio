@@ -1,0 +1,46 @@
+// Homepage
+
+.homepage {
+    width: 90%;
+    margin: auto;
+    padding: 150px 0 130px 10px;
+    border-left: 2px solid $text-color-secondary;
+    @include medium {
+        width: 80%;
+        padding: 150px 30px 30px 30px;
+    }
+    @include large {
+        width: 70%;
+    }
+}
+
+.homepage h1 {
+    font-size: 40px;
+    margin: 40px 0 30px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, $text-color-secondary 0%, #D93851 30%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include medium {
+        margin: 100px 0 30px;
+        font-size: 50px;
+    }
+}
+
+.homepage h2 {
+    font-size: 25px;
+    margin: 10px 0;
+    @include medium {
+        font-size: 30px;
+    }
+}
+
+#developing {
+    font-family: 'Roboto Mono', monospace;
+}
+
+#design {
+    font-family: Georgia;
+    font-style: italic;
+}

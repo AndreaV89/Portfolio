@@ -1,0 +1,17 @@
+// Mixins
+
+@mixin small {
+    @media (min-width: 375px) {@content;}
+}
+
+@mixin medium {
+    @media (min-width: 768px) {@content;}
+}
+
+@mixin large {
+    @media (min-width: 1024px) {@content;}
+}
+
+@mixin xlarge {
+    @media (min-width: 1440px) {@content;}
+}

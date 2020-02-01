@@ -87,9 +87,9 @@ $('#modal').on('click', '#exit-modal', function() {
 // Slide Menu
 
 $(document).ready(function(){
-    $('.menu-btn').click(function(){
-        $('.main-nav').slideToggle(200);
-        $('.main-nav').css('display' , 'flex');
+    $('#menu-btn').click(function(){
+        $('#menu').slideToggle(200);
+        $('#menu').css('display' , 'flex');
     });
 });
 

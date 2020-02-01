@@ -1,0 +1,149 @@
+// Modal
+
+#modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -100vw;
+    background-color: #222222;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    @include large {
+        display: flex;
+    }
+}
+
+.modal-project-img {
+    width: 100%;
+    @include medium {
+        width: 80%;
+        margin: 30px auto;
+        -webkit-box-shadow: 0px 0px 40px 10px rgba(0,0,0,1);
+        -moz-box-shadow: 0px 0px 40px 10px rgba(0,0,0,1);
+        box-shadow: 0px 0px 40px 10px rgba(0,0,0,1);
+    }
+    @include large {
+        width: 90%;
+        height: auto;
+        margin: auto;
+    }
+}
+
+#description-container {
+    padding: 10px;
+    flex-direction: column;
+    @include medium {
+        width: 80%;
+        margin: auto;
+    }
+    @include large {
+        width: 30%;
+        padding: 20px;
+    }
+}
+
+#img-container {
+    @include medium {
+        display: flex;
+    }
+    @include large {
+        width: 70%;
+    }
+}
+
+#btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#exit-modal {
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    position: relative;
+    margin: 0;
+    font-weight: bold;
+    color: $text-color-primary;
+    cursor: pointer;
+    background-color: $text-color-secondary;
+    border: none;
+    border-radius: 100%;
+}
+
+#exit-modal:hover #tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+#tooltip {
+    position: absolute;
+    visibility: hidden;
+    background-color: #222222;
+    width: 100px;
+    padding: 3px;
+    border-radius: 3px;
+    color: white;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -50px;
+    opacity: 0;
+    transition: opacity 1.5s;
+}
+
+.skills {
+    color: $text-color-secondary;
+}
+
+.project-name {
+    margin: 10px 0;
+    @include small {
+        margin: 30px 0;
+    }
+    @include large {
+        font-size: 2em;
+    }
+}
+
+.skills, .description {
+    margin: 10px 0;
+    @include small {
+        margin: 30px 0;
+    }
+    @include large {
+        font-size: 1.4em;
+    } 
+}
+
+#code-link, #site-link {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(to right, #f2911b 0%, #D93851 100%);
+    color: $text-color-primary;
+    border-radius: 12.5px;
+    padding: 3px;
+    text-transform: uppercase;
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(242,145,27,0.75);
+    -moz-box-shadow: 0px 0px 30px 0px rgba(242,145,27,0.75);
+    box-shadow: 0px 0px 30px 0px rgba(242,145,27,0.75);
+    transition: all .5s ease-in-out;
+    @include small {
+        padding: 10px;
+        border-radius: 20px;
+    }
+    @include medium {
+        width: 30%;
+    }
+    @include large {
+        font-size: 1.4em;
+        border-radius: 23.5px;
+    }
+}
+
+#code-link:hover, #site-link:hover {
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(3,135,255,1);
+    -moz-box-shadow: 0px 0px 30px 0px rgba(3,135,255,1);
+    box-shadow: 0px 0px 30px 0px rgba(3,135,255,1);
+}

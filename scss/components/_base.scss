@@ -1,0 +1,19 @@
+// Base components
+
+html {
+    background-color: black;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: $text-color-primary;
+    background-color: $background-color;
+}
+
+h4 {
+    color: grey;
+    @include medium {
+        font-size: 1.5em;
+    }
+}
+

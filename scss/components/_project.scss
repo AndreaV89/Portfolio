@@ -1,0 +1,90 @@
+// Projects Page
+
+.projects-page {
+    width: 90%;
+    margin: auto;
+    padding: 30px 0 0 10px;
+    border-left: 2px solid $text-color-secondary;
+    @include medium {
+        width: 80%;
+        padding: 30px;
+    }
+    @include large {
+        width: 70%;
+    }
+}
+
+.projects-container {
+    padding-bottom: 80px;
+}
+
+.projects-container div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    @include large {
+        display: flex;
+    }
+}
+
+.projects-container h3 {
+    margin: 20px auto;
+    @include medium {
+        font-size: 1.8em;
+    }
+    @include large {
+        border-bottom: 2px solid $text-color-secondary;
+        width: 200px;
+        margin: 0;
+    }
+}
+
+.projects-container img {
+    width: 270px;
+    margin: auto;
+    @include medium {
+        transition: all .3s linear;
+    }
+    @include large {
+        position: relative;
+        margin-top: -130px;
+        margin-left: 200px;
+    }
+    @include xlarge {
+        width: 400px;
+    }
+}
+
+.projects-container img:hover {
+    @include medium {
+        -webkit-box-shadow: 0px 0px 40px 10px rgba(242,145,27,0.75);
+        -moz-box-shadow: 0px 0px 40px 10px rgba(242,145,27,0.75);
+        box-shadow: 0px 0px 40px 10px rgba(242,145,27,0.75);
+        transform: scale(1.1);
+    }
+    @include large {
+        transform: scale(1.2);
+    }
+}
+
+@media (min-width: 1024px) {
+    .projects-container div:nth-child(1) {
+       margin-top: 100px; 
+    }
+    .projects-container div:nth-child(2) {
+        margin-top: 10px;
+        margin-left: 55%; 
+    }
+    .projects-container div:nth-child(3) {
+        margin-top: 10px;
+        margin-left: 10%; 
+    }
+    .projects-container div:nth-child(4) {
+        margin-top: 40px; 
+    }
+    .projects-container div:nth-child(5) {
+        margin-top: 20px;
+        margin-left: 45%; 
+    }
+}
+
