@@ -19,13 +19,18 @@
     flex-wrap: wrap;
 }
 
-#brand {
-    font-size: 40px;
-    margin: 0;
+#logo {
+    width: 100px;
+    height: 60px;
+    margin-left: 15px;
 }
 
-#brand span {
-    color: $text-color-secondary;
+#logo-a, #logo-v {
+    fill: $text-color-secondary;
+}
+
+#logo-slash {
+    fill: grey;
 }
 
 #menu-btn {
