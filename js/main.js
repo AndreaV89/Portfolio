@@ -94,6 +94,35 @@ $(document).ready(function(){
 });
 
 
+$("#homepage-link").click(function(e){
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $("#homepage").offset().top
+    }, 700);
+});
+
+$("#projects-link").click(function(e){
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $("#projects").offset().top
+    }, 700);
+});
+
+$("#contact-link").click(function(e){
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $("#contact").offset().top
+    }, 700);
+});
+
+$(function () {
+    $(document).scroll(function () {
+      var $nav = $("#main-header");
+      $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    });
+  });
+
+
 
 
 
