@@ -1,9 +1,8 @@
 // src/components/Layout.jsx
 import { Box, Typography } from "@mui/material";
 
-// Questa funzione genera un array di numeri da 1 a 100 (es. ["01", "02", ..., "99", "100"])
-// Serve per simulare le righe di codice a sinistra.
-const lineNumbers = Array.from({ length: 100 }, (_, i) =>
+// FIX 1: Aumentiamo le righe da 100 a 300 (o 400) per coprire tutta la lunghezza della pagina
+const lineNumbers = Array.from({ length: 155 }, (_, i) =>
   (i + 1).toString().padStart(2, "0")
 );
 
@@ -11,22 +10,22 @@ const Layout = ({ children }) => {
   return (
     <Box
       sx={{
-        display: "flex", // Mette gli elementi uno accanto all'altro (sinistra e destra)
-        minHeight: "100vh", // Altezza minima tutto lo schermo
-        maxWidth: "1200px", // Larghezza massima per non allargarsi troppo su schermi giganti
-        margin: "0 auto", // Centra il sito nel monitor
+        display: "flex",
+        minHeight: "100vh",
+        maxWidth: "1200px",
+        margin: "0 auto",
         position: "relative",
-        zIndex: 1, // Sta sopra lo sfondo, ma sotto il cursore (che ha zIndex 9999)
+        zIndex: 1,
       }}
     >
-      {/* --- NUOVO: LOGO PLACEHOLDER --- */}
+      {/* LOGO PLACEHOLDER */}
       <Box
         sx={{
-          position: "fixed", // Rimane fisso quando scrolli
+          position: "fixed",
           top: "30px",
           left: "40px",
-          zIndex: 50, // Sopra a tutto il resto del layout
-          display: { xs: "none", md: "block" }, // Su mobile lo nascondiamo o lo spostiamo (per ora nascosto)
+          zIndex: 50,
+          display: { xs: "none", md: "block" },
         }}
       >
         <Typography
@@ -35,12 +34,12 @@ const Layout = ({ children }) => {
             fontFamily: '"Fira Code", monospace',
             fontWeight: 700,
             color: "#fff",
-            border: "1px solid rgba(255,255,255,0.2)", // Un bordo sottile come un chip
+            border: "1px solid rgba(255,255,255,0.2)",
             padding: "5px 15px",
-            backgroundColor: "rgba(0,0,0,0.5)", // Sfondo semi-trasparente per leggibilità
-            backdropFilter: "blur(5px)", // Effetto vetro
+            backgroundColor: "rgba(0,0,0,0.5)",
+            backdropFilter: "blur(5px)",
             "&:hover": {
-              borderColor: "#a8e400", // Diventa verde al passaggio
+              borderColor: "#a8e400",
               color: "#a8e400",
               boxShadow: "0 0 15px rgba(168, 228, 0, 0.2)",
             },
@@ -50,21 +49,24 @@ const Layout = ({ children }) => {
           &lt;Logo /&gt;
         </Typography>
       </Box>
-      {/* ------------------------------- */}
-      {/* 1. LA GUTTER (Colonna dei numeri) */}
+
+      {/* LA GUTTER (Colonna dei numeri) */}
       <Box
         sx={{
-          width: "60px", // Larghezza fissa
-          flexShrink: 0, // Non si rimpicciolisce mai
-          textAlign: "right", // Numeri allineati a destra
-          paddingRight: "20px", // Spazio tra numero e contenuto
-          paddingTop: "40px", // Spazio dall'alto
-          borderRight: "1px solid rgba(255, 255, 255, 0.05)", // Linea verticale sottilissima separatoria
-          userSelect: "none", // L'utente non può selezionare i numeri col mouse (stile IDE)
-          color: "#444", // Colore grigio scuro spento per i numeri
-          fontFamily: '"Fira Code", monospace', // Font da codice
+          width: "60px",
+          flexShrink: 0,
+          textAlign: "right",
+          paddingRight: "20px",
+          paddingTop: "10px",
+          // FIX 2: Assicuriamo che la linea divisoria sia sempre lunga quanto il contenuto più lungo
+          borderRight: "1px solid rgba(255, 255, 255, 0.05)",
+          userSelect: "none",
+          color: "#333",
+          fontFamily: '"Fira Code", monospace',
           fontSize: "0.9rem",
-          lineHeight: 1.6, // Spaziatura verticale tra i numeri (deve combaciare col testo)
+          lineHeight: 1.6,
+          // Aggiungiamo padding bottom per pareggiare la fine della pagina
+          paddingBottom: "10px",
         }}
       >
         {lineNumbers.map((num) => (
@@ -72,17 +74,17 @@ const Layout = ({ children }) => {
         ))}
       </Box>
 
-      {/* 2. AREA CONTENUTO (Dove andrà il tuo portfolio) */}
+      {/* AREA CONTENUTO */}
       <Box
         sx={{
-          flexGrow: 1, // Occupa tutto lo spazio rimanente
-          paddingLeft: "20px",
-          paddingTop: "36px", // Allineato visivamente con la prima riga
-          paddingBottom: "50px",
+          flexGrow: 1,
+          paddingLeft: "40px",
+          paddingTop: "116px",
+          paddingBottom: "10px",
+          // Questo serve a garantire che se il contenuto è breve, la pagina abbia comunque altezza
+          minHeight: "100vh",
         }}
       >
-        {/* 'children' è una parola speciale di React. 
-            Significa: "Metti qui dentro qualsiasi cosa io inserisca dentro il tag <Layout>" */}
         {children}
       </Box>
     </Box>

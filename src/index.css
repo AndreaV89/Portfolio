@@ -3,6 +3,7 @@
 
 html {
   scroll-behavior: smooth; /* La magia che rende lo scroll fluido */
+  scroll-snap-type: y mandatory;
 }
 
 body {
