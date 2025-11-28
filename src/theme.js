@@ -1,49 +1,59 @@
 // src/theme.js
 import { createTheme } from "@mui/material/styles";
 
-// Qui definiamo la "personalità" del tuo sito
 const theme = createTheme({
   palette: {
-    mode: "dark", // Impostiamo la modalità scura di base
+    mode: "dark",
     background: {
-      default: "#121212", // Il tuo grigio scurissimo
-      paper: "#1e1e1e", // Un grigio leggermente più chiaro per le card (opzionale)
+      default: "#0a0a0a",
     },
     primary: {
-      main: "#a8e400", // Il tuo verde lime "Spotlight"
+      main: "#a8e400",
     },
     text: {
-      primary: "#ffffff", // Testo principale bianco
-      secondary: "#a8e400", // Testo secondario verde (per i dettagli monospaced)
+      primary: "#ffffff",
+      secondary: "#888888", // Grigio medio per i testi meno importanti
     },
   },
   typography: {
-    fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif', // Font pulito per i titoli
-    // Definiamo uno stile personalizzato per i tuoi sottotitoli "code-style"
+    fontFamily: '"Inter", sans-serif',
     h1: {
-      fontWeight: 700, // Titoli belli grassetti
+      fontWeight: 900, // Molto grassetto
+      fontSize: "clamp(2.5rem, 6vw, 4.5rem)", // Si adatta allo schermo: enorme su desktop, grande su mobile
+      letterSpacing: "-0.02em", // Lettere vicine per un look moderno
+      lineHeight: 1.1,
     },
     h2: {
-      fontWeight: 600,
+      fontWeight: 700,
+      fontSize: "clamp(2rem, 5vw, 3.5rem)",
+      color: "#e0e0e0",
     },
-    // Possiamo usare 'subtitle1' per il tuo stile monospaced
     subtitle1: {
-      fontFamily: '"Fira Code", "Courier New", monospace', // Font da codice
-      color: "#a8e400",
+      fontFamily: '"Fira Code", monospace',
+      fontSize: "1rem",
+      color: "#a8e400", // Il tuo verde
+    },
+    body1: {
+      fontSize: "1.1rem",
+      lineHeight: 1.8,
+      color: "#999", // Testo descrittivo grigio, non bianco sparato
     },
   },
   components: {
-    // Qui diremo a MUI di usare il nostro colore di sfondo globalmente
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          backgroundColor: "#121212",
-          backgroundImage: `linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)), repeating-linear-gradient(0deg, transparent, transparent 2px, #a8e400 2px, #a8e400 4px)`,
-          backgroundSize: "100% 4px",
-          // Nota: La texture sopra è un placeholder per l'effetto CRT,
-          // la raffineremo nel prossimo passaggio per renderla "sottilissima".
-          scrollbarColor: "#a8e400 #121212",
+          backgroundColor: "#0a0a0a", // Nero profondo
+          // Ripristiniamo la griglia a puntini
+          backgroundImage: `radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px)`,
+          backgroundSize: "30px 30px", // Distanza puntini
+
+          scrollbarColor: "#a8e400 #0a0a0a",
           scrollbarWidth: "thin",
+          cursor: "none", // Cursore sempre nascosto
+        },
+        "a, button": {
+          cursor: "none",
         },
       },
     },
