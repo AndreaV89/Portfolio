@@ -3,6 +3,7 @@ import { Box, Typography, Container, Stack } from "@mui/material";
 import SpotlightCursor from "./components/SpotlightCursor";
 import Layout from "./components/Layout";
 import DecryptedText from "./components/DecryptedText";
+import ProjectList from "./components/ProjectList";
 
 function App() {
   return (
@@ -13,18 +14,16 @@ function App() {
       <SpotlightCursor />
 
       <Layout>
-        {/* Contenitore Hero centrato verticalmente */}
         <Container maxWidth="md" sx={{ px: { xs: 0, md: 4 } }}>
           <Box
             sx={{
-              minHeight: "70vh", // Occupa buona parte dello schermo
+              minHeight: "70vh",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
               pt: 8,
             }}
           >
-            {/* Tagline piccola stile codice */}
             <Typography
               variant="subtitle1"
               sx={{ mb: 2, display: "flex", alignItems: "center", gap: 1 }}
@@ -33,17 +32,15 @@ function App() {
               <span>// Start</span>
             </Typography>
 
-            {/* NOME GIGANTE */}
             <Box sx={{ mb: 2 }}>
               <DecryptedText
                 text="Andrea Vannetti"
                 variant="h1"
                 color="white"
-                sx={{ display: "block" }} // Assicura che vada a capo se serve
+                sx={{ display: "block" }}
               />
             </Box>
 
-            {/* Sottotitolo */}
             <Typography variant="h2" sx={{ mb: 4, opacity: 0.8 }}>
               Building digital{" "}
               <span style={{ color: "#a8e400" }}>experiences</span>
@@ -51,18 +48,17 @@ function App() {
               that matter.
             </Typography>
 
-            {/* Descrizione breve */}
             <Typography variant="body1" sx={{ maxWidth: "500px", mb: 6 }}>
               Sono un Full Stack Developer specializzato in interfacce moderne e
               performanti. Trasformo il codice in prodotti che lasciano il
               segno.
             </Typography>
 
-            {/* Pulsante/Call to action simulato */}
             <Box sx={{ display: "flex", gap: 4 }}>
               <Typography
                 variant="subtitle1"
                 component="a"
+                href="#work"
                 sx={{
                   textDecoration: "none",
                   borderBottom: "1px solid #a8e400",
@@ -88,6 +84,21 @@ function App() {
 
           {/* Spazio placeholder per lo scroll */}
           <div style={{ height: "500px" }}></div>
+
+          {/* --- SEZIONE PROGETTI --- */}
+          {/* Aggiungiamo un id="work" per far funzionare il link sopra */}
+          <Box id="work" sx={{ minHeight: "100vh", pt: 10 }}>
+            {/* Titolo Sezione */}
+            <Typography variant="h4" sx={{ mb: 2, fontWeight: 700 }}>
+              <span style={{ color: "#a8e400" }}>02.</span> Selected Works
+            </Typography>
+
+            {/* Inseriamo la lista qui */}
+            <ProjectList />
+          </Box>
+
+          {/* Spazio finale per non tagliare il fondo */}
+          <Box sx={{ height: "200px" }} />
         </Container>
       </Layout>
     </>
