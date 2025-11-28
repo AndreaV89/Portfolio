@@ -1,8 +1,6 @@
-// src/components/Layout.jsx
 import { Box, Typography } from "@mui/material";
 
-// FIX 1: Aumentiamo le righe da 100 a 300 (o 400) per coprire tutta la lunghezza della pagina
-const lineNumbers = Array.from({ length: 155 }, (_, i) =>
+const lineNumbers = Array.from({ length: 157 }, (_, i) =>
   (i + 1).toString().padStart(2, "0")
 );
 
@@ -16,9 +14,13 @@ const Layout = ({ children }) => {
         margin: "0 auto",
         position: "relative",
         zIndex: 1,
+        // FIX FONDAMENTALE:
+        // Invece di dare padding diversi alle colonne, diamo un padding unico qui
+        // così numeri e testo iniziano ESATTAMENTE alla stessa altezza.
+        paddingTop: "10px",
       }}
     >
-      {/* LOGO PLACEHOLDER */}
+      {/* LOGO PLACEHOLDER (Fisso) */}
       <Box
         sx={{
           position: "fixed",
@@ -50,22 +52,20 @@ const Layout = ({ children }) => {
         </Typography>
       </Box>
 
-      {/* LA GUTTER (Colonna dei numeri) */}
+      {/* LA GUTTER */}
       <Box
         sx={{
           width: "60px",
           flexShrink: 0,
           textAlign: "right",
           paddingRight: "20px",
-          paddingTop: "10px",
-          // FIX 2: Assicuriamo che la linea divisoria sia sempre lunga quanto il contenuto più lungo
+          // Rimosso padding-top specifico
           borderRight: "1px solid rgba(255, 255, 255, 0.05)",
           userSelect: "none",
           color: "#333",
           fontFamily: '"Fira Code", monospace',
           fontSize: "0.9rem",
           lineHeight: 1.6,
-          // Aggiungiamo padding bottom per pareggiare la fine della pagina
           paddingBottom: "10px",
         }}
       >
@@ -79,9 +79,8 @@ const Layout = ({ children }) => {
         sx={{
           flexGrow: 1,
           paddingLeft: "40px",
-          paddingTop: "116px",
+          // Rimosso padding-top specifico: ora si allinea naturalmente con la gutter
           paddingBottom: "10px",
-          // Questo serve a garantire che se il contenuto è breve, la pagina abbia comunque altezza
           minHeight: "100vh",
         }}
       >

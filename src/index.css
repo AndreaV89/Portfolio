@@ -1,40 +1,57 @@
 /* src/index.css */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Fira+Code:wght@400;500&display=swap");
 
+/* CONFIGURAZIONE LENIS + SNAP */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important; /* FONDAMENTALE: Disabilita smooth nativo, lascia fare a Lenis */
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* IL MAGNETE */
 html {
-  scroll-behavior: smooth; /* La magia che rende lo scroll fluido */
+  /* Definiamo che lo scroll deve agganciarsi sull'asse Y */
   scroll-snap-type: y mandatory;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #0a0a0a; /* Ancora più scuro, quasi nero puro */
+  background-color: #0a0a0a;
   color: white;
-  overflow-x: hidden; /* Evita scroll orizzontale */
+  overflow-x: hidden;
 }
 
-/* Questa classe crea la pellicola granulosa sopra tutto */
-.noise-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* Lascia passare i click */
-  z-index: 9990; /* Sopra lo sfondo, sotto il testo */
-  opacity: 0.07; /* Regola questo per vedere più o meno "grana" */
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+/* LE REGOLE PER OGNI SLIDE */
+.snap-section {
+  /* Allinea l'inizio della sezione col top dello schermo */
+  scroll-snap-align: start;
+
+  /* IL SEGRETO: "Always" forza il browser a fermarsi a questa sezione.
+     Impedisce di scorrere 2-3 sezioni con un colpo solo. */
+  scroll-snap-stop: always;
+
+  /* Assicuriamo che non ci siano margini strani */
+  scroll-margin-top: 0px;
 }
 
-/* Nascondiamo la scrollbar per un look pulito */
 ::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
-}
-::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 3px;
+  width: 0px;
+  background: transparent;
 }
