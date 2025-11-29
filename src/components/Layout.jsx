@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 
-const lineNumbers = Array.from({ length: 160 }, (_, i) =>
+const lineNumbers = Array.from({ length: 175 }, (_, i) =>
   (i + 1).toString().padStart(2, "0")
 );
 

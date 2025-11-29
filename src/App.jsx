@@ -19,6 +19,8 @@ const sectionStyle = {
   flexDirection: "column",
   justifyContent: "center",
   position: "relative",
+  paddingTop: "60px",
+  paddingBottom: "60px",
 };
 
 function App() {
@@ -172,9 +174,33 @@ function App() {
           <SectionDivider />
 
           {/* --- CONTATTI --- */}
-          <Box id="contact" className="snap-section" sx={sectionStyle}>
+          <Box
+            id="contact"
+            className="snap-section"
+            sx={{
+              minHeight: "100vh",
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              // CAMBIAMENTO CHIAVE: Non usiamo 'center' qui!
+              // Usiamo flex-start per iniziare dall'alto
+              justifyContent: "flex-start",
+              position: "relative",
+              pt: "60px", // Padding per non attaccarsi alla sezione sopra
+            }}
+          >
             {/* Il titolo qui dentro è rimosso e gestito dal componente Contact.jsx stesso */}
-            <Contact />
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center", // Centra verticalmente il box contatti
+                width: "100%",
+              }}
+            >
+              <Contact />
+            </Box>
 
             <Footer />
           </Box>

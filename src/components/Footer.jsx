@@ -13,7 +13,7 @@ const Footer = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        mt: 10, // Margine sopra per staccarlo dai contenuti
+        mt: 20, // Margine sopra per staccarlo dai contenuti
         mb: 4, // Margine sotto per non attaccarlo al bordo
         opacity: 0.7,
         transition: "opacity 0.3s",
@@ -42,7 +42,7 @@ const Footer = () => {
           mt: 1,
         }}
       >
-        © {currentYear} [Tuo Nome]
+        © {currentYear} Andrea Vannetti
       </Typography>
     </Box>
   );
