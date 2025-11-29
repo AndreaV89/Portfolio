@@ -1,6 +1,12 @@
 // src/components/ProjectList.jsx
 import { useState } from "react";
-import { Box, Typography, LinearProgress } from "@mui/material";
+import {
+  Box,
+  Typography,
+  LinearProgress,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 
 // 1. I DATI DEI PROGETTI (Modifica questi in futuro!)
 const projects = [
@@ -35,17 +41,18 @@ const projects = [
 ];
 
 const ProjectList = () => {
-  // Stato per sapere su quale progetto siamo
   const [hoveredProject, setHoveredProject] = useState(null);
-  // Stato per la posizione del tooltip (coordinate X e Y)
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   // Funzione che aggiorna la posizione mentre muovi il mouse
   const handleMouseMove = (e) => {
-    setMousePos({
-      x: e.clientX,
-      y: e.clientY,
-    });
+    // Aggiorniamo la posizione solo se NON siamo su mobile
+    if (!isMobile) {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    }
   };
 
   return (
@@ -87,7 +94,7 @@ const ProjectList = () => {
               sx={{
                 fontFamily: '"Fira Code", monospace',
                 color: "#666",
-                mr: 3,
+                mr: { xs: 1, md: 3 },
                 fontSize: "0.9rem",
               }}
             >
@@ -103,6 +110,7 @@ const ProjectList = () => {
                   hoveredProject?.id === project.id ? "#a8e400" : "#e0e0e0", // Diventa verde se selezionato
                 fontFamily: '"Inter", sans-serif',
                 letterSpacing: "-0.02em",
+                fontSize: { xs: "1.2rem", md: "1.5rem" },
               }}
             >
               {project.name}
@@ -114,6 +122,7 @@ const ProjectList = () => {
                 ml: 1,
                 color: "#444",
                 fontFamily: '"Fira Code", monospace',
+                display: { xs: "none", sm: "block" },
               }}
             >
               .tsx
@@ -123,11 +132,10 @@ const ProjectList = () => {
       </Box>
 
       {/* 3. IL TOOLTIP FLOTTANTE (Appare solo se hoveredProject esiste) */}
-      {hoveredProject && (
+      {!isMobile && hoveredProject && (
         <Box
           sx={{
             position: "fixed",
-            // Posizioniamo il tooltip 40px a destra e 20px sotto il mouse
             left: mousePos.x + 40,
             top: mousePos.y + 20,
             width: "300px",

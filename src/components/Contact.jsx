@@ -3,7 +3,7 @@ import { Box, Typography, Button } from "@mui/material";
 
 const Contact = () => {
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%", overflow: "hidden" }}>
       {/* RIPRISTINATO IL TITOLO GRANDE */}
       <Typography variant="h4" sx={{ mb: 4, fontWeight: 700 }}>
         <span
@@ -27,13 +27,15 @@ const Contact = () => {
           background: "rgba(255, 255, 255, 0.03)",
           border: "1px solid rgba(255, 255, 255, 0.1)",
           borderRadius: "8px",
-          padding: "30px",
+          padding: { xs: "20px", md: "30px" },
           maxWidth: "500px",
+          width: "100%",
           fontFamily: '"Fira Code", monospace',
-          fontSize: "0.95rem",
+          fontSize: { xs: "0.85rem", md: "0.95rem" },
           position: "relative",
           boxShadow: "0 0 30px rgba(0,0,0,0.3)",
           transition: "border-color 0.3s",
+          overflowX: "auto",
           "&:hover": {
             borderColor: "rgba(168, 228, 0, 0.3)",
           },
@@ -48,7 +50,7 @@ const Contact = () => {
           <span style={{ color: "#fdd600" }}> {"{"}</span>
         </div>
 
-        <Box sx={{ pl: 4, my: 1 }}>
+        <Box sx={{ pl: { xs: 2, md: 4 }, my: 1 }}>
           <div style={{ marginBottom: "8px" }}>
             <span style={{ color: "#95d2f2" }}>email</span>:
             <a
@@ -62,7 +64,7 @@ const Contact = () => {
               ,
             </a>
           </div>
-          <div style={{ marginBottom: "8px" }}>
+          <div style={{ marginBottom: "8px", whiteSpace: "nowrap" }}>
             <span style={{ color: "#95d2f2" }}>github</span>:
             <a
               href="https://github.com/AndreaV89"

@@ -79,6 +79,8 @@ const Layout = ({ children }) => {
           paddingRight: { xs: "20px", md: "0" },
           paddingBottom: "10px",
           minHeight: "100vh",
+          width: "100%",
+          overflowX: "hidden",
         }}
       >
         {children}
