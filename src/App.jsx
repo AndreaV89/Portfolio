@@ -1,14 +1,14 @@
 // src/App.jsx
 import { useEffect, useRef } from "react";
 import { Box, Typography, Container } from "@mui/material";
-import Lenis from "lenis"; // Importiamo la libreria
+import Lenis from "lenis";
 import SpotlightCursor from "./components/SpotlightCursor";
 import Layout from "./components/Layout";
 import DecryptedText from "./components/DecryptedText";
 import ProjectList from "./components/ProjectList";
 import Contact from "./components/Contact";
 
-// Stile per le sezioni Slide (Full Screen)
+// Ritorna a 100vh fissi per occupare tutto lo schermo
 const sectionStyle = {
   height: "100vh",
   width: "100%",
@@ -16,27 +16,25 @@ const sectionStyle = {
   flexDirection: "column",
   justifyContent: "center",
   position: "relative",
-  // Non mettiamo padding-top qui, gestiamo la centratura con Flexbox
 };
 
 function App() {
   const lenisRef = useRef(null);
 
   useEffect(() => {
-    // 1. INIZIALIZZAZIONE LENIS
     const lenis = new Lenis({
-      duration: 1.2, // Durata inerzia (più alto = più morbido)
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Curva esponenziale fluida
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
-      gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 1, // Sensibilità rotellina
-      touchMultiplier: 2, // Sensibilità touch
+      wheelMultiplier: 1,
+      syncTouch: true,
     });
 
     lenisRef.current = lenis;
 
-    // Loop di animazione (necessario per Lenis)
+    document.body.classList.add("lenis-active");
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -45,16 +43,15 @@ function App() {
 
     return () => {
       lenis.destroy();
+      document.body.classList.remove("lenis-active");
     };
   }, []);
 
-  // 2. Funzione custom per lo scroll fluido ai link
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element && lenisRef.current) {
       lenisRef.current.scrollTo(element, {
-        duration: 1.5, // Durata del viaggio quando clicchi
-        lock: false,
+        duration: 1.5,
       });
     }
   };
@@ -63,25 +60,28 @@ function App() {
     <>
       <SpotlightCursor />
 
-      {/* IMPORTANTE: Layout non deve avere 'overflow: hidden' o bloccare lo scroll 
-         altrimenti Lenis non funziona. Il nostro Layout.jsx attuale va bene.
-      */}
       <Layout>
         <Container maxWidth="md" sx={{ px: { xs: 0, md: 4 } }}>
           {/* --- HERO SECTION --- */}
+          {/* Aggiungiamo 'snap-section' per agganciarlo se riattivi lo snap CSS */}
           <Box className="snap-section" sx={sectionStyle}>
             <Box>
-              <Typography
-                variant="subtitle1"
-                sx={{ mb: 2, display: "flex", alignItems: "center", gap: 1 }}
-              >
-                <span style={{ color: "#666" }}>01</span>
-                <span>// Start</span>
+              {/* Titolo Hero: Piccolo e tecnico */}
+              <Typography variant="h4" sx={{ mb: 4, fontWeight: 700 }}>
+                <span
+                  style={{
+                    color: "#a8e400",
+                    fontFamily: '"Fira Code", monospace',
+                  }}
+                >
+                  01.
+                </span>
+                <span> {"<Start />"}</span>
               </Typography>
 
               <Box sx={{ mb: 2 }}>
                 <DecryptedText
-                  text="[TUO NOME]"
+                  text="Andrea Vannetti"
                   variant="h1"
                   color="white"
                   sx={{ display: "block" }}
@@ -101,9 +101,9 @@ function App() {
               </Typography>
 
               <Box sx={{ display: "flex", gap: 4 }}>
-                {/* Usiamo la nostra funzione scrollToSection */}
                 <Typography
                   variant="subtitle1"
+                  className="hover-target"
                   onClick={() => scrollToSection("work")}
                   sx={{
                     cursor: "none",
@@ -117,6 +117,7 @@ function App() {
 
                 <Typography
                   variant="subtitle1"
+                  className="hover-target"
                   onClick={() => scrollToSection("contact")}
                   sx={{
                     cursor: "none",
@@ -135,17 +136,26 @@ function App() {
 
           {/* --- PROGETTI --- */}
           <Box id="work" className="snap-section" sx={sectionStyle}>
+            {/* Titolo Progetti: Grande e Bold (come piaceva a te) */}
             <Typography variant="h4" sx={{ mb: 4, fontWeight: 700 }}>
-              <span style={{ color: "#a8e400" }}>02.</span> Selected Works
+              <span
+                style={{
+                  color: "#a8e400",
+                  fontFamily: '"Fira Code", monospace',
+                }}
+              >
+                02.
+              </span>
+              {"<Selected Works />"}
             </Typography>
             <ProjectList />
           </Box>
 
           {/* --- CONTATTI --- */}
           <Box id="contact" className="snap-section" sx={sectionStyle}>
+            {/* Il titolo qui dentro è rimosso e gestito dal componente Contact.jsx stesso */}
             <Contact />
 
-            {/* Footer assoluto in fondo all'ultima slide */}
             <Typography
               variant="body2"
               align="center"
@@ -158,7 +168,7 @@ function App() {
                 fontFamily: '"Fira Code", monospace',
               }}
             >
-              Built with React & MaterialUI
+              Built with React & MaterialUI by Andrea Vannetti
             </Typography>
           </Box>
         </Container>

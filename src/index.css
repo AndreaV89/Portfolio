@@ -1,33 +1,19 @@
 /* src/index.css */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Fira+Code:wght@400;500&display=swap");
 
-/* CONFIGURAZIONE LENIS + SNAP */
-
 html.lenis,
 html.lenis body {
   height: auto;
 }
 
 .lenis.lenis-smooth {
-  scroll-behavior: auto !important; /* FONDAMENTALE: Disabilita smooth nativo, lascia fare a Lenis */
+  scroll-behavior: auto !important;
 }
 
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
-}
-
-/* IL MAGNETE */
 html {
-  /* Definiamo che lo scroll deve agganciarsi sull'asse Y */
+  /* Se vuoi l'effetto "slide" mantieni queste due righe, altrimenti toglile per scroll libero */
   scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
 body {
@@ -38,16 +24,11 @@ body {
   overflow-x: hidden;
 }
 
-/* LE REGOLE PER OGNI SLIDE */
 .snap-section {
-  /* Allinea l'inizio della sezione col top dello schermo */
+  /* Se vuoi l'effetto "slide" mantieni questo blocco */
   scroll-snap-align: start;
-
-  /* IL SEGRETO: "Always" forza il browser a fermarsi a questa sezione.
-     Impedisce di scorrere 2-3 sezioni con un colpo solo. */
   scroll-snap-stop: always;
-
-  /* Assicuriamo che non ci siano margini strani */
+  height: 100vh;
   scroll-margin-top: 0px;
 }
 

@@ -15,7 +15,8 @@ const SpotlightCursor = () => {
         target.tagName === "BUTTON" ||
           target.tagName === "A" ||
           target.closest("a") ||
-          target.closest("button")
+          target.closest("button") ||
+          target.closest(".hover-target")
       );
     };
 

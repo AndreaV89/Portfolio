@@ -3,10 +3,15 @@ import { Box, Typography, Button } from "@mui/material";
 
 const Contact = () => {
   return (
-    // Rimuoviamo id="contact" e i padding esagerati
     <Box sx={{ width: "100%" }}>
+      {/* RIPRISTINATO IL TITOLO GRANDE */}
       <Typography variant="h4" sx={{ mb: 4, fontWeight: 700 }}>
-        <span style={{ color: "#a8e400" }}>03.</span> Initialize Link
+        <span
+          style={{ color: "#a8e400", fontFamily: '"Fira Code", monospace' }}
+        >
+          03.
+        </span>{" "}
+        {"<Initialize Link />"}
       </Typography>
 
       <Typography
@@ -34,56 +39,63 @@ const Contact = () => {
           },
         }}
       >
-        <div style={{ color: "#c678dd" }}>
-          const <span style={{ color: "#e5c07b" }}>contactInfo</span> = {"{"}
+        <div>
+          <span style={{ color: "#559ad3" }}>const</span>{" "}
+          <span style={{ color: "#dcdcaa" }}>ContactInfo</span>
+          <span style={{ color: "#FFF" }}> = </span>
+          <span style={{ color: "#fdd600" }}>{"()"}</span>
+          <span style={{ color: "#5293c8" }}> {"=>"}</span>
+          <span style={{ color: "#fdd600" }}> {"{"}</span>
         </div>
 
         <Box sx={{ pl: 4, my: 1 }}>
           <div style={{ marginBottom: "8px" }}>
-            <span style={{ color: "#e06c75" }}>email</span>:
+            <span style={{ color: "#95d2f2" }}>email</span>:
             <a
-              href="mailto:tuo.email@example.com"
-              style={{ textDecoration: "none" }}
+              href="mailto:a.vannetti08@gmail.com"
+              style={{ textDecoration: "none", color: "#FFF" }}
             >
-              <span style={{ color: "#98c379", cursor: "none" }}>
+              <span style={{ color: "#ce9178", cursor: "none" }}>
                 {" "}
-                "tuo.email@example.com"
+                "a.vannetti08@gmail.com"
               </span>
               ,
             </a>
           </div>
           <div style={{ marginBottom: "8px" }}>
-            <span style={{ color: "#e06c75" }}>github</span>:
+            <span style={{ color: "#95d2f2" }}>github</span>:
             <a
-              href="https://github.com"
+              href="https://github.com/AndreaV89"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: "none", color: "#FFF" }}
             >
-              <span style={{ color: "#98c379", cursor: "none" }}>
+              <span style={{ color: "#ce9178", cursor: "none" }}>
                 {" "}
-                "github.com/..."
+                "github.com/AndreaV89"
               </span>
               ,
             </a>
           </div>
           <div>
-            <span style={{ color: "#e06c75" }}>linkedin</span>:
+            <span style={{ color: "#95d2f2" }}>linkedin</span>:
             <a
-              href="https://linkedin.com"
+              href="www.linkedin.com/in/andrea-vannetti-215105153"
               target="_blank"
               rel="noopener noreferrer"
               style={{ textDecoration: "none" }}
             >
-              <span style={{ color: "#98c379", cursor: "none" }}>
+              <span style={{ color: "#ce9178", cursor: "none" }}>
                 {" "}
-                "linkedin.com/..."
+                "linkedin.com/in/andrea-vannetti"
               </span>
             </a>
           </div>
         </Box>
 
-        <div style={{ color: "#c678dd" }}>{"}"};</div>
+        <div style={{ color: "#fff" }}>
+          <span style={{ color: "#fdd600" }}>{"}"}</span>;
+        </div>
       </Box>
 
       <Box sx={{ mt: 6 }}>
@@ -91,6 +103,7 @@ const Contact = () => {
           variant="outlined"
           href="mailto:tuo.email@example.com"
           sx={{
+            cursor: "none",
             color: "#a8e400",
             borderColor: "#a8e400",
             padding: "15px 40px",

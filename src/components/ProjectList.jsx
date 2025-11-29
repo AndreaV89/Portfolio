@@ -49,11 +49,7 @@ const ProjectList = () => {
   };
 
   return (
-    <Box
-      sx={{ mt: 8, position: "relative" }}
-      onMouseMove={handleMouseMove} // Ascoltiamo il mouse su tutta la lista
-      onMouseLeave={() => setHoveredProject(null)} // Nascondi tooltip se esci dalla lista
-    >
+    <Box sx={{ mt: 8, position: "relative" }}>
       <Typography
         variant="h6"
         sx={{ fontFamily: '"Fira Code", monospace', color: "#666", mb: 4 }}
@@ -62,9 +58,14 @@ const ProjectList = () => {
       </Typography>
 
       {/* 2. LA LISTA DEI PROGETTI */}
-      <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+      <Box
+        sx={{ display: "flex", flexDirection: "column", gap: 1 }}
+        onMouseMove={handleMouseMove} // Ascoltiamo il mouse su tutta la lista
+        onMouseLeave={() => setHoveredProject(null)} // Nascondi tooltip se esci dalla lista
+      >
         {projects.map((project) => (
           <Box
+            className="hover-target"
             key={project.id}
             onMouseEnter={() => setHoveredProject(project)}
             sx={{
