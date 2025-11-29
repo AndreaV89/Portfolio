@@ -14,9 +14,6 @@ const Layout = ({ children }) => {
         margin: "0 auto",
         position: "relative",
         zIndex: 1,
-        // FIX FONDAMENTALE:
-        // Invece di dare padding diversi alle colonne, diamo un padding unico qui
-        // così numeri e testo iniziano ESATTAMENTE alla stessa altezza.
         paddingTop: "10px",
       }}
     >
@@ -55,11 +52,11 @@ const Layout = ({ children }) => {
       {/* LA GUTTER */}
       <Box
         sx={{
-          width: "60px",
+          display: { xs: "none", md: "block" },
+          width: "40px",
           flexShrink: 0,
           textAlign: "right",
           paddingRight: "20px",
-          // Rimosso padding-top specifico
           borderRight: "1px solid rgba(255, 255, 255, 0.05)",
           userSelect: "none",
           color: "#333",
@@ -78,8 +75,8 @@ const Layout = ({ children }) => {
       <Box
         sx={{
           flexGrow: 1,
-          paddingLeft: "40px",
-          // Rimosso padding-top specifico: ora si allinea naturalmente con la gutter
+          paddingLeft: { xs: "20px", md: "40px" },
+          paddingRight: { xs: "20px", md: "0" },
           paddingBottom: "10px",
           minHeight: "100vh",
         }}
