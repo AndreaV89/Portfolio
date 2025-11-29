@@ -7,6 +7,9 @@ import Layout from "./components/Layout";
 import DecryptedText from "./components/DecryptedText";
 import ProjectList from "./components/ProjectList";
 import Contact from "./components/Contact";
+import ScrollIndicator from "./components/ScrollIndicator";
+import SectionDivider from "./components/SectionDivider";
+import Footer from "./components/Footer";
 
 // Ritorna a 100vh fissi per occupare tutto lo schermo
 const sectionStyle = {
@@ -139,6 +142,7 @@ function App() {
                 </Typography>
               </Box>
             </Box>
+            <ScrollIndicator onClick={() => scrollToSection("work")} />
           </Box>
 
           {/* --- PROGETTI --- */}
@@ -165,23 +169,14 @@ function App() {
             <ProjectList />
           </Box>
 
+          <SectionDivider />
+
           {/* --- CONTATTI --- */}
           <Box id="contact" className="snap-section" sx={sectionStyle}>
             {/* Il titolo qui dentro è rimosso e gestito dal componente Contact.jsx stesso */}
             <Contact />
 
-            <Typography
-              variant="body2"
-              align="center"
-              sx={{
-                mt: 8,
-                mb: 4,
-                color: "#444",
-                fontFamily: '"Fira Code", monospace',
-              }}
-            >
-              Built with React & MaterialUI by Andrea Vannetti
-            </Typography>
+            <Footer />
           </Box>
         </Container>
       </Layout>
