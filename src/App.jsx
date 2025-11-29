@@ -10,7 +10,7 @@ import Contact from "./components/Contact";
 
 // Ritorna a 100vh fissi per occupare tutto lo schermo
 const sectionStyle = {
-  height: "100vh",
+  minHeight: "100vh",
   width: "100%",
   display: "flex",
   flexDirection: "column",
@@ -67,7 +67,14 @@ function App() {
           <Box className="snap-section" sx={sectionStyle}>
             <Box>
               {/* Titolo Hero: Piccolo e tecnico */}
-              <Typography variant="h4" sx={{ mb: 4, fontWeight: 700 }}>
+              <Typography
+                variant="h4"
+                sx={{
+                  mb: { xs: 4, md: 6 },
+                  fontWeight: 700,
+                  fontSize: { xs: "1.5rem", md: "2.125rem" },
+                }}
+              >
                 <span
                   style={{
                     color: "#a8e400",
@@ -137,7 +144,14 @@ function App() {
           {/* --- PROGETTI --- */}
           <Box id="work" className="snap-section" sx={sectionStyle}>
             {/* Titolo Progetti: Grande e Bold (come piaceva a te) */}
-            <Typography variant="h4" sx={{ mb: 4, fontWeight: 700 }}>
+            <Typography
+              variant="h4"
+              sx={{
+                mb: { xs: 4, md: 6 },
+                fontWeight: 700,
+                fontSize: { xs: "1.5rem", md: "2.125rem" },
+              }}
+            >
               <span
                 style={{
                   color: "#a8e400",
@@ -160,10 +174,8 @@ function App() {
               variant="body2"
               align="center"
               sx={{
-                position: "absolute",
-                bottom: 30,
-                left: 0,
-                right: 0,
+                mt: 8,
+                mb: 4,
                 color: "#444",
                 fontFamily: '"Fira Code", monospace',
               }}

@@ -5,7 +5,14 @@ const Contact = () => {
   return (
     <Box sx={{ width: "100%", overflow: "hidden" }}>
       {/* RIPRISTINATO IL TITOLO GRANDE */}
-      <Typography variant="h4" sx={{ mb: 4, fontWeight: 700 }}>
+      <Typography
+        variant="h4"
+        sx={{
+          mb: 4,
+          fontWeight: 700,
+          fontSize: { xs: "1.5rem", md: "2.125rem" },
+        }}
+      >
         <span
           style={{ color: "#a8e400", fontFamily: '"Fira Code", monospace' }}
         >

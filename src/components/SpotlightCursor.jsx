@@ -1,15 +1,19 @@
 import { useState, useEffect } from "react";
-import { Box } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 
 const SpotlightCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   useEffect(() => {
+    if (isMobile) return;
+
     const handleMouseMove = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
 
-      // Controllo extra: se passiamo sopra un link o bottone, possiamo ingrandire leggermente il cursore (opzionale)
       const target = e.target;
       setIsHovering(
         target.tagName === "BUTTON" ||
@@ -22,7 +26,9 @@ const SpotlightCursor = () => {
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [isMobile]);
+
+  if (isMobile) return null;
 
   return (
     <>

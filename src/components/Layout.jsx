@@ -14,17 +14,16 @@ const Layout = ({ children }) => {
         margin: "0 auto",
         position: "relative",
         zIndex: 1,
-        paddingTop: "10px",
+        paddingTop: { xs: "80px", md: "10px" },
       }}
     >
       {/* LOGO PLACEHOLDER (Fisso) */}
       <Box
         sx={{
           position: "fixed",
-          top: "30px",
-          left: "40px",
+          top: { xs: "20px", md: "30px" },
+          left: { xs: "20px", md: "40px" },
           zIndex: 50,
-          display: { xs: "none", md: "block" },
         }}
       >
         <Typography
@@ -34,7 +33,8 @@ const Layout = ({ children }) => {
             fontWeight: 700,
             color: "#fff",
             border: "1px solid rgba(255,255,255,0.2)",
-            padding: "5px 15px",
+            padding: { xs: "3px 10px", md: "5px 15px" },
+            fontSize: { xs: "0.9rem", md: "1.25rem" },
             backgroundColor: "rgba(0,0,0,0.5)",
             backdropFilter: "blur(5px)",
             "&:hover": {
