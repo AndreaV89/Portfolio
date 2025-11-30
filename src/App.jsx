@@ -11,7 +11,7 @@ import ScrollIndicator from "./components/ScrollIndicator";
 import SectionDivider from "./components/SectionDivider";
 import Footer from "./components/Footer";
 
-// Ritorna a 100vh fissi per occupare tutto lo schermo
+// Stile base
 const sectionStyle = {
   minHeight: "100vh",
   width: "100%",
@@ -27,6 +27,7 @@ function App() {
   const lenisRef = useRef(null);
 
   useEffect(() => {
+    // ... (Codice Lenis invariato) ...
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -35,17 +36,13 @@ function App() {
       wheelMultiplier: 1,
       syncTouch: true,
     });
-
     lenisRef.current = lenis;
-
     document.body.classList.add("lenis-active");
-
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
-
     return () => {
       lenis.destroy();
       document.body.classList.remove("lenis-active");
@@ -55,9 +52,7 @@ function App() {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element && lenisRef.current) {
-      lenisRef.current.scrollTo(element, {
-        duration: 1.5,
-      });
+      lenisRef.current.scrollTo(element, { duration: 1.5 });
     }
   };
 
@@ -66,12 +61,13 @@ function App() {
       <SpotlightCursor />
 
       <Layout>
-        <Container maxWidth="md" sx={{ px: { xs: 0, md: 4 } }}>
-          {/* --- HERO SECTION --- */}
-          {/* Aggiungiamo 'snap-section' per agganciarlo se riattivi lo snap CSS */}
+        {/* HERO: Aggiungiamo pl (padding-left) su desktop per non finire sotto i numeri */}
+        <Container
+          maxWidth="md"
+          sx={{ px: { xs: 0, md: 4 }, pl: { md: "80px" } }}
+        >
           <Box className="snap-section" sx={sectionStyle}>
             <Box>
-              {/* Titolo Hero: Piccolo e tecnico */}
               <Typography
                 variant="h4"
                 sx={{
@@ -88,7 +84,7 @@ function App() {
                 >
                   01.
                 </span>
-                <span> {"<Start />"}</span>
+                <span> {"Start />"}</span>
               </Typography>
 
               <Box sx={{ mb: 2 }}>
@@ -126,7 +122,6 @@ function App() {
                 >
                   View Projects
                 </Typography>
-
                 <Typography
                   variant="subtitle1"
                   className="hover-target"
@@ -146,10 +141,24 @@ function App() {
             </Box>
             <ScrollIndicator onClick={() => scrollToSection("work")} />
           </Box>
+        </Container>
 
-          {/* --- PROGETTI --- */}
-          <Box id="work" className="snap-section" sx={sectionStyle}>
-            {/* Titolo Progetti: Grande e Bold (come piaceva a te) */}
+        {/* PROGETTI: Sfondo full width, Contenuto indentato */}
+        <Box
+          id="work"
+          sx={{
+            width: "100%", // Occupa tutto lo schermo
+            py: 30,
+            background:
+              "linear-gradient(180deg, #0a0a0a 0%, #0f1a05 20%, #0f1a05 80%, #0a0a0a 100%)",
+            position: "relative",
+          }}
+        >
+          {/* Container interno INDENTATO */}
+          <Container
+            maxWidth="md"
+            sx={{ px: { xs: 0, md: 4 }, pl: { md: "80px" } }}
+          >
             <Typography
               variant="h4"
               sx={{
@@ -166,42 +175,33 @@ function App() {
               >
                 02.
               </span>
-              {"<Selected Works />"}
+              {"Selected Works />"}
             </Typography>
             <ProjectList />
-          </Box>
+          </Container>
+        </Box>
 
-          <SectionDivider />
-
-          {/* --- CONTATTI --- */}
+        {/* CONTATTI: Indentato come la Hero */}
+        <Container
+          maxWidth="md"
+          sx={{ px: { xs: 0, md: 4 }, pl: { md: "80px" } }}
+        >
           <Box
             id="contact"
             className="snap-section"
-            sx={{
-              minHeight: "100vh",
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              // CAMBIAMENTO CHIAVE: Non usiamo 'center' qui!
-              // Usiamo flex-start per iniziare dall'alto
-              justifyContent: "flex-start",
-              position: "relative",
-              pt: "60px", // Padding per non attaccarsi alla sezione sopra
-            }}
+            sx={{ ...sectionStyle, justifyContent: "flex-start", pt: "100px" }}
           >
-            {/* Il titolo qui dentro è rimosso e gestito dal componente Contact.jsx stesso */}
             <Box
               sx={{
                 flexGrow: 1,
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "center", // Centra verticalmente il box contatti
+                justifyContent: "center",
                 width: "100%",
               }}
             >
               <Contact />
             </Box>
-
             <Footer />
           </Box>
         </Container>

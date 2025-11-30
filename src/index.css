@@ -1,37 +1,26 @@
 /* src/index.css */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Fira+Code:wght@400;500&display=swap");
 
+/* Reset e Base */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a; /* Il nero di base */
+  color: white;
+  overflow-x: hidden; /* Evita scroll orizzontale */
+}
+
+/* Configurazioni Lenis (Manteniamo lo scroll fluido inerziale) */
 html.lenis,
 html.lenis body {
   height: auto;
 }
-
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
 
-html {
-  /* Se vuoi l'effetto "slide" mantieni queste due righe, altrimenti toglile per scroll libero */
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #0a0a0a;
-  color: white;
-  overflow-x: hidden;
-}
-
-.snap-section {
-  /* Se vuoi l'effetto "slide" mantieni questo blocco */
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  height: 100vh;
-  scroll-margin-top: 0px;
-}
-
+/* Scrollbar nascosta per pulizia */
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;

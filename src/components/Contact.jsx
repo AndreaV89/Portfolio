@@ -18,7 +18,7 @@ const Contact = () => {
         >
           03.
         </span>{" "}
-        {"<Initialize Link />"}
+        {" Initialize Link />"}
       </Typography>
 
       <Typography
