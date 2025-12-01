@@ -44,15 +44,15 @@ const Layout = ({ children }) => {
       {/* 2. GUTTER: Ora è FIXED e fuori dal flusso */}
       <Box
         sx={{
-          position: "fixed", // <--- FISSATO
+          position: "absolute", // <--- FISSATO
           top: 0,
           left: 0,
-          bottom: 0, // Occupa tutta l'altezza
+          height: "100%", // Occupa tutta l'altezza
           width: "60px",
           display: { xs: "none", md: "block" }, // Nascosto su mobile
           textAlign: "right",
           paddingRight: "15px", // Spazio tra numero e contenuto
-          paddingTop: "100px", // Parte sotto il logo
+          paddingTop: "120px", // Parte sotto il logo
           borderRight: "1px solid rgba(255, 255, 255, 0.05)",
           userSelect: "none",
           color: "#333",
@@ -62,6 +62,7 @@ const Layout = ({ children }) => {
           zIndex: 40, // Sopra lo sfondo, sotto il logo
           backgroundColor: "transparent", // Trasparente così si vede lo sfondo sotto
           overflow: "hidden", // Nasconde numeri in eccesso
+          pointerEvents: "none",
         }}
       >
         {lineNumbers.map((num) => (

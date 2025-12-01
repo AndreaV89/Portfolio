@@ -34,7 +34,7 @@ function App() {
       orientation: "vertical",
       smoothWheel: true,
       wheelMultiplier: 1,
-      syncTouch: true,
+      syncTouch: false,
     });
     lenisRef.current = lenis;
     document.body.classList.add("lenis-active");
@@ -64,9 +64,9 @@ function App() {
         {/* HERO: Aggiungiamo pl (padding-left) su desktop per non finire sotto i numeri */}
         <Container
           maxWidth="md"
-          sx={{ px: { xs: 0, md: 4 }, pl: { md: "80px" } }}
+          sx={{ px: { xs: 2, md: 4 }, pl: { md: "80px" } }}
         >
-          <Box className="snap-section" sx={sectionStyle}>
+          <Box sx={sectionStyle}>
             <Box>
               <Typography
                 variant="h4"
@@ -157,7 +157,7 @@ function App() {
           {/* Container interno INDENTATO */}
           <Container
             maxWidth="md"
-            sx={{ px: { xs: 0, md: 4 }, pl: { md: "80px" } }}
+            sx={{ px: { xs: 2, md: 4 }, pl: { md: "80px" } }}
           >
             <Typography
               variant="h4"
