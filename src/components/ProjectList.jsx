@@ -12,31 +12,32 @@ import {
 const projects = [
   {
     id: "01",
-    name: "Project_Alpha_Ecommerce",
-    type: "Web App",
-    stack: "React / Node.js / MongoDB",
-    progress: 100, // 100% = Completato
-    status: "Deployed", // Stato testo
-    description: "Piattaforma e-commerce completa con carrello e pagamenti.",
+    name: "Succulentarte",
+    type: "Web",
+    stack: "React / Node.js / Vercel",
+    progress: 100,
+    status: "Deployed",
+    description: "Catalogo di piante succulente con Dashboard.",
   },
   {
     id: "02",
-    name: "Dashboard_Analytics_Pro",
-    type: "Dashboard",
-    stack: "Vue.js / Firebase",
+    name: "Cresta Dell'Angiolo",
+    type: "Web",
+    stack: "Wordpress / React",
     progress: 75,
     status: "In Development",
     description:
-      "Pannello di controllo per visualizzazione dati in tempo reale.",
+      "Pagina Web della Cresta dell'Angiolo, cammino escursionistico sui monti del Chianti",
   },
   {
     id: "03",
-    name: "Mobile_Chat_System",
-    type: "Mobile",
-    stack: "React Native / Socket.io",
+    name: "Radici in Chianti",
+    type: "Web",
+    stack: "React / Wordpress",
     progress: 45,
     status: "Prototyping",
-    description: "App di messaggistica istantanea crittografata.",
+    description:
+      "Pagina Web di Radici in Chianti, associazione di promozione sociale e territoriale.",
   },
 ];
 

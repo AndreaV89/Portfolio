@@ -13,7 +13,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Maintenance from "./components/Maintenance";
 
 // MAINTENANCE MODE
-const IS_MAINTENANCE_MODE = true;
+const IS_MAINTENANCE_MODE = false;
 
 // Stile base
 const sectionStyle = {
@@ -31,7 +31,6 @@ function App() {
   const lenisRef = useRef(null);
 
   useEffect(() => {
-    // ... (Codice Lenis invariato) ...
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -69,7 +68,7 @@ function App() {
       <SpotlightCursor />
 
       <Layout>
-        {/* HERO: Aggiungiamo pl (padding-left) su desktop per non finire sotto i numeri */}
+        {/* HERO */}
         <Container
           maxWidth="md"
           sx={{ px: { xs: 2, md: 4 }, pl: { md: "80px" } }}
@@ -125,7 +124,7 @@ function App() {
                     "&:hover": { color: "#a8e400" },
                   }}
                 >
-                  View Projects
+                  Progetti
                 </Typography>
                 <Typography
                   variant="subtitle1"
@@ -140,7 +139,7 @@ function App() {
                     "&:hover": { color: "#a8e400", borderColor: "#a8e400" },
                   }}
                 >
-                  Contact Me
+                  Contattami
                 </Typography>
               </Box>
             </Box>
@@ -148,18 +147,17 @@ function App() {
           </Box>
         </Container>
 
-        {/* PROGETTI: Sfondo full width, Contenuto indentato */}
+        {/* PROGETTI */}
         <Box
           id="work"
           sx={{
-            width: "100%", // Occupa tutto lo schermo
+            width: "100%",
             py: 30,
             background:
               "linear-gradient(180deg, #0a0a0a 0%, #0f1a05 20%, #0f1a05 80%, #0a0a0a 100%)",
             position: "relative",
           }}
         >
-          {/* Container interno INDENTATO */}
           <Container
             maxWidth="md"
             sx={{ px: { xs: 2, md: 4 }, pl: { md: "80px" } }}
@@ -180,13 +178,13 @@ function App() {
               >
                 02.
               </span>
-              {"Selected Works />"}
+              {" Selected Works />"}
             </Typography>
             <ProjectList />
           </Container>
         </Box>
 
-        {/* CONTATTI: Indentato come la Hero */}
+        {/* CONTATTI */}
         <Container
           maxWidth="md"
           sx={{ px: { xs: 2, md: 4 }, pl: { md: "80px" } }}

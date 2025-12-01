@@ -12,13 +12,14 @@ const bounce = keyframes`
 const ScrollIndicator = ({ onClick }) => {
   return (
     <Box
+      className="hover-target"
       onClick={onClick}
       sx={{
         position: "absolute",
         bottom: "40px",
         left: "50%",
         transform: "translateX(-50%)",
-        cursor: "pointer",
+        cursor: "noneS",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
