@@ -105,8 +105,8 @@ const MobileActions = () => {
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
             y="0px"
-            width="100"
-            height="100"
+            width="20"
+            height="20"
             viewBox="0 0 48 48"
           >
             <path
@@ -132,7 +132,7 @@ const MobileActions = () => {
               clip-rule="evenodd"
             ></path>
           </svg>
-          Chat
+          WhatsApp
         </Button>
 
         {/* 3. CHIAMA */}
@@ -161,7 +161,7 @@ const MobileActions = () => {
           >
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.05 12.05 0 0 0 .57 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.03 12.03 0 0 0 2.81.57A2 2 0 0 1 22 16.92z" />
           </svg>
-          Call
+          Chiamami
         </Button>
       </Box>
     </Fade>
