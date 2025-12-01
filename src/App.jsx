@@ -10,6 +10,10 @@ import ScrollIndicator from "./components/ScrollIndicator";
 import Footer from "./components/Footer";
 import MobileActions from "./components/MobileActions";
 import ScrollToTop from "./components/ScrollToTop";
+import Maintenance from "./components/Maintenance";
+
+// MAINTENANCE MODE
+const IS_MAINTENANCE_MODE = true;
 
 // Stile base
 const sectionStyle = {
@@ -55,6 +59,10 @@ function App() {
       lenisRef.current.scrollTo(element, { duration: 1.5 });
     }
   };
+
+  if (IS_MAINTENANCE_MODE) {
+    return <Maintenance />;
+  }
 
   return (
     <>
