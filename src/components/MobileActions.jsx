@@ -2,8 +2,8 @@
 import { Box, Button } from "@mui/material";
 
 const MobileActions = () => {
-  // Sostituisci con il tuo numero reale
-  const phoneNumber = "+393330000000";
+  // SOSTITUISCI CON IL TUO NUMERO REALE (es. 393331234567)
+  const phoneNumber = "393470587552";
 
   return (
     <Box
@@ -11,19 +11,25 @@ const MobileActions = () => {
         // Visibile solo su mobile (xs), nascosto da md in su
         display: { xs: "flex", md: "none" },
         position: "fixed",
-        bottom: "30px",
+        bottom: "20px", // Un po' staccato dal fondo
         left: "50%",
         transform: "translateX(-50%)",
         gap: 2,
-        zIndex: 9999, // Sopra a tutto
-        width: "90%", // Occupa quasi tutta la larghezza
+        zIndex: 9999, // Sopra a tutto, anche al cursore
+        width: "90%",
         maxWidth: "400px",
+        // Un contenitore sfocato per dare risalto ai bottoni
+        backgroundColor: "rgba(0,0,0,0.6)",
+        backdropFilter: "blur(10px)",
+        padding: "10px",
+        borderRadius: "16px",
+        border: "1px solid rgba(255,255,255,0.1)",
       }}
     >
       {/* Tasto CHIAMA */}
       <Button
         variant="contained"
-        href={`tel:${phoneNumber}`}
+        href={`tel:+${phoneNumber}`}
         sx={{
           flex: 1,
           backgroundColor: "#a8e400",
@@ -36,14 +42,13 @@ const MobileActions = () => {
           "&:hover": { backgroundColor: "#8cc200" },
         }}
       >
-        Call Me
+        Call
       </Button>
 
       {/* Tasto WHATSAPP */}
       <Button
         variant="outlined"
-        // API di WhatsApp: apre la chat direttamente
-        href={`https://wa.me/${phoneNumber.replace("+", "")}`}
+        href={`https://wa.me/${phoneNumber}`}
         target="_blank"
         sx={{
           flex: 1,
@@ -53,11 +58,10 @@ const MobileActions = () => {
           fontFamily: '"Fira Code", monospace',
           textTransform: "none",
           borderRadius: "8px",
-          backgroundColor: "rgba(0,0,0,0.8)", // Sfondo scuro per leggibilità
-          backdropFilter: "blur(5px)",
           "&:hover": {
-            borderColor: "#a8e400",
-            backgroundColor: "rgba(168, 228, 0, 0.1)",
+            borderColor: "#fff",
+            color: "#fff",
+            backgroundColor: "rgba(255, 255, 255, 0.05)",
           },
         }}
       >

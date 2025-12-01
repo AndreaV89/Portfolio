@@ -4,13 +4,12 @@ import { Box, Typography, Container } from "@mui/material";
 import Lenis from "lenis";
 import SpotlightCursor from "./components/SpotlightCursor";
 import Layout from "./components/Layout";
-import DecryptedText from "./components/DecryptedText";
 import ProjectList from "./components/ProjectList";
 import Contact from "./components/Contact";
 import ScrollIndicator from "./components/ScrollIndicator";
-import SectionDivider from "./components/SectionDivider";
 import Footer from "./components/Footer";
 import MobileActions from "./components/MobileActions";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Stile base
 const sectionStyle = {
@@ -89,12 +88,9 @@ function App() {
               </Typography>
 
               <Box sx={{ mb: 2 }}>
-                <DecryptedText
-                  text="Andrea Vannetti"
-                  variant="h1"
-                  color="white"
-                  sx={{ display: "block" }}
-                />
+                <Typography variant="h1" color="white">
+                  Andrea Vannetti
+                </Typography>
               </Box>
 
               <Typography variant="h2" sx={{ mb: 4, opacity: 0.8 }}>
@@ -207,6 +203,7 @@ function App() {
           </Box>
         </Container>
         <MobileActions />
+        <ScrollToTop />
       </Layout>
     </>
   );
