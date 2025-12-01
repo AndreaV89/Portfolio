@@ -1,5 +1,5 @@
 // src/components/Footer.jsx
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Link } from "@mui/material";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,8 +13,8 @@ const Footer = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        mt: 20, // Margine sopra per staccarlo dai contenuti
-        mb: 4, // Margine sotto per non attaccarlo al bordo
+        mt: 20,
+        mb: 4,
         opacity: 0.7,
         transition: "opacity 0.3s",
         "&:hover": { opacity: 1 },
@@ -32,7 +32,6 @@ const Footer = () => {
         Built with React & MaterialUI
       </Typography>
 
-      {/* Opzionale: Aggiungiamo l'anno dinamico */}
       <Typography
         variant="caption"
         sx={{
@@ -40,9 +39,26 @@ const Footer = () => {
           fontFamily: '"Fira Code", monospace',
           fontSize: "0.75rem",
           mt: 1,
+          display: "flex",
+          gap: 2, // Distanzia i due elementi
+          alignItems: "center",
         }}
       >
-        © {currentYear} Andrea Vannetti
+        <span>© {currentYear} Andrea Vannetti</span>
+
+        {/* Link alla Privacy (puoi mettere '#' per ora se non hai l'URL) */}
+        <Link
+          href="#" // Inserisci qui il link di Iubenda o simili quando lo avrai
+          target="_blank"
+          underline="hover"
+          sx={{
+            color: "#444",
+            textDecoration: "none",
+            "&:hover": { color: "#a8e400" },
+          }}
+        >
+          Privacy Policy
+        </Link>
       </Typography>
     </Box>
   );

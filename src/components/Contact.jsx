@@ -128,7 +128,7 @@ const Contact = () => {
             },
           }}
         >
-          Say Hello()
+          Contattami()
         </Button>
       </Box>
     </Box>

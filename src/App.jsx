@@ -13,7 +13,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Maintenance from "./components/Maintenance";
 
 // MAINTENANCE MODE
-const IS_MAINTENANCE_MODE = false;
+const IS_MAINTENANCE_MODE = true;
 
 // Stile base
 const sectionStyle = {
@@ -101,15 +101,14 @@ function App() {
               </Box>
 
               <Typography variant="h2" sx={{ mb: 4, opacity: 0.8 }}>
-                Building digital{" "}
-                <span style={{ color: "#a8e400" }}>experiences</span>
+                Crafting immersive digital{" "}
+                <span style={{ color: "#a8e400" }}>experiences</span>.
                 <br />
-                that matter.
               </Typography>
 
               <Typography variant="body1" sx={{ maxWidth: "500px", mb: 6 }}>
-                Sono un Full Stack Developer specializzato in interfacce moderne
-                e performanti.
+                Trasformo idee complesse in interfacce web intuitive e moderne,
+                curando ogni dettaglio dall'idea al deploy.
               </Typography>
 
               <Box sx={{ display: "flex", gap: 4 }}>
