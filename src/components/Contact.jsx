@@ -107,10 +107,10 @@ const Contact = () => {
         </div>
       </Box>
 
-      <Box sx={{ mt: 6 }}>
+      <Box sx={{ mt: 6, display: { xs: "none", md: "block" } }}>
         <Button
           variant="outlined"
-          href="mailto:tuo.email@example.com"
+          href="mailto:a.vannetti08@gmail.com"
           sx={{
             cursor: "none",
             color: "#a8e400",
