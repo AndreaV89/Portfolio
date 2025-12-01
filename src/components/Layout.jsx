@@ -8,7 +8,7 @@ const lineNumbers = Array.from({ length: 200 }, (_, i) =>
 
 const Layout = ({ children }) => {
   return (
-    <Box sx={{ minHeight: "100vh" }}>
+    <Box sx={{ minHeight: "100vh", position: "relative" }}>
       {/* 1. LOGO: Fisso in alto a sinistra */}
       <Box
         sx={{
@@ -47,12 +47,12 @@ const Layout = ({ children }) => {
           position: "absolute", // <--- FISSATO
           top: 0,
           left: 0,
-          height: "100%", // Occupa tutta l'altezza
+          bottom: 0, // Occupa tutta l'altezza
           width: "60px",
           display: { xs: "none", md: "block" }, // Nascosto su mobile
           textAlign: "right",
           paddingRight: "15px", // Spazio tra numero e contenuto
-          paddingTop: "120px", // Parte sotto il logo
+          paddingTop: "10px", // Parte sotto il logo
           borderRight: "1px solid rgba(255, 255, 255, 0.05)",
           userSelect: "none",
           color: "#333",
@@ -62,7 +62,6 @@ const Layout = ({ children }) => {
           zIndex: 40, // Sopra lo sfondo, sotto il logo
           backgroundColor: "transparent", // Trasparente così si vede lo sfondo sotto
           overflow: "hidden", // Nasconde numeri in eccesso
-          pointerEvents: "none",
         }}
       >
         {lineNumbers.map((num) => (

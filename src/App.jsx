@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import ScrollIndicator from "./components/ScrollIndicator";
 import SectionDivider from "./components/SectionDivider";
 import Footer from "./components/Footer";
+import MobileActions from "./components/MobileActions";
 
 // Stile base
 const sectionStyle = {
@@ -184,7 +185,7 @@ function App() {
         {/* CONTATTI: Indentato come la Hero */}
         <Container
           maxWidth="md"
-          sx={{ px: { xs: 0, md: 4 }, pl: { md: "80px" } }}
+          sx={{ px: { xs: 2, md: 4 }, pl: { md: "80px" } }}
         >
           <Box
             id="contact"
@@ -205,6 +206,7 @@ function App() {
             <Footer />
           </Box>
         </Container>
+        <MobileActions />
       </Layout>
     </>
   );
