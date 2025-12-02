@@ -41,7 +41,7 @@ const SpotlightCursor = () => {
           width: "100vw",
           height: "100vh",
           pointerEvents: "none",
-          zIndex: 9998, // Appena sotto il cursore puntatore
+          zIndex: 10998, // Appena sotto il cursore puntatore
           // Raggio ridotto a 350px per essere meno invasivo
           background: `radial-gradient(350px circle at ${position.x}px ${position.y}px, rgba(168, 228, 0, 0.07), transparent 40%)`,
         }}
@@ -62,7 +62,7 @@ const SpotlightCursor = () => {
             position.y - (isHovering ? 10 : 6)
           }px)`, // Centriamo perfettamente
           pointerEvents: "none",
-          zIndex: 9999, // Sopra a tutto
+          zIndex: 10999, // Sopra a tutto
           transition: "width 0.2s, height 0.2s, background-color 0.2s", // Animazione fluida
           boxShadow: "0 0 10px rgba(168, 228, 0, 0.5)", // Un piccolo alone extra sul puntatore
         }}

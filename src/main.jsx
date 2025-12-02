@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import "./index.css"; // Stili globali minimi
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import theme from "./theme"; // Importiamo il tema che abbiamo appena creato
+import { Analytics } from "@vercel/analytics/react";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       {/* CssBaseline applica il colore di sfondo e resetta i margini */}
       <CssBaseline />
       <App />
+      <Analytics />
     </ThemeProvider>
   </React.StrictMode>
 );
