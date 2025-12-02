@@ -16,6 +16,7 @@ const Layout = ({ children }) => {
           top: { xs: "20px", md: "30px" },
           left: { xs: "20px", md: "120px" },
           zIndex: 50,
+          display: "none",
         }}
       >
         <Typography
