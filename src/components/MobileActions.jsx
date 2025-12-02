@@ -25,12 +25,12 @@ const MobileActions = () => {
   const buttonStyle = {
     flex: 1,
     minWidth: "auto",
-    padding: "10px 0",
+    padding: "8px 0",
     borderRadius: "8px",
     textTransform: "none",
     fontFamily: '"Fira Code", monospace',
     fontWeight: "bold",
-    fontSize: "0.8rem",
+    fontSize: "0.75rem",
     display: "flex",
     flexDirection: "column",
     gap: "4px",
@@ -58,6 +58,33 @@ const MobileActions = () => {
           boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
         }}
       >
+        <Button
+          variant="outlined"
+          href="/cv.pdf"
+          target="_blank"
+          sx={{
+            ...buttonStyle,
+            borderColor: "#a8e400",
+            color: "#a8e400",
+            "&:hover": { backgroundColor: "rgba(168, 228, 0, 0.1)" },
+          }}
+        >
+          {/* Icona Documento */}
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+            <polyline points="14 2 14 8 20 8" />
+          </svg>
+          CV
+        </Button>
         {/* 1. EMAIL (Say Hello) */}
         <Button
           variant="contained"

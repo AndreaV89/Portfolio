@@ -23,7 +23,7 @@ const sectionStyle = {
   flexDirection: "column",
   justifyContent: "center",
   position: "relative",
-  paddingTop: "60px",
+  paddingTop: "100px",
   paddingBottom: "60px",
 };
 
@@ -139,6 +139,30 @@ function App() {
                   }}
                 >
                   Contattami
+                </Typography>
+                <Typography
+                  component="a"
+                  href="/cv.pdf" // Assicurati che il file si chiami così in /public
+                  target="_blank" // Apre in una nuova scheda
+                  rel="noopener noreferrer"
+                  className="hover-target"
+                  variant="subtitle1"
+                  sx={{
+                    textDecoration: "none",
+                    cursor: "none",
+                    color: "#a8e400",
+                    border: "1px solid #a8e400", // Un vero bottone bordato per risaltare
+                    borderRadius: "4px",
+                    px: 2, // Padding orizzontale
+                    py: 0.5,
+                    transition: "all 0.3s",
+                    "&:hover": {
+                      backgroundColor: "rgba(168, 228, 0, 0.1)",
+                      boxShadow: "0 0 10px rgba(168, 228, 0, 0.3)",
+                    },
+                  }}
+                >
+                  Download CV
                 </Typography>
               </Box>
             </Box>
