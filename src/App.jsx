@@ -13,7 +13,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Maintenance from "./components/Maintenance";
 
 // MAINTENANCE MODE
-const IS_MAINTENANCE_MODE = true;
+const IS_MAINTENANCE_MODE = false;
 
 // Stile base
 const sectionStyle = {
