@@ -23,7 +23,7 @@ const sectionStyle = {
   flexDirection: "column",
   justifyContent: "center",
   position: "relative",
-  //paddingTop: "100px",
+  paddingTop: { sm: "100px", md: "100px" },
   //paddingBottom: "60px",
 };
 
@@ -111,7 +111,13 @@ function App() {
                 curando ogni dettaglio dall'idea al deploy.
               </Typography>
 
-              <Box sx={{ display: "flex", gap: 4 }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: 4,
+                  justifyContent: { xs: "space-around", md: "left" },
+                }}
+              >
                 <Typography
                   variant="subtitle1"
                   className="hover-target"

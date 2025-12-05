@@ -16,10 +16,10 @@ const Layout = ({ children }) => {
         href="/"
         sx={{
           position: "fixed",
-          top: { xs: "15px", md: "-30px" },
-          left: { xs: "15px", md: "120px" },
+          top: { xs: "15px", md: "15px", lg: "0" },
+          left: { xs: "15px", md: "100px" },
           zIndex: 50,
-          display: "block",
+          display: { xs: "none", lg: "block" },
           cursor: "none",
         }}
       >
@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
           alt="Andrea Vannetti Logo"
           className="hover-target" // Per attivare l'effetto del cursore spotlight
           sx={{
-            height: { xs: "25px", md: "50px", lg: "250px" }, // Altezza responsive
+            height: { xs: "25px", md: "100px", lg: "100px", xl: "250px" }, // Altezza responsive
             width: "auto",
             transition: "all 0.3s ease",
             filter: "brightness(0.8)", // Leggermente meno luminoso di default
