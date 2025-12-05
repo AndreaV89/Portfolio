@@ -35,7 +35,7 @@ const ScrollToTop = () => {
         right: { xs: "20px", md: "40px" },
         zIndex: 99,
         backgroundColor: "rgba(168, 228, 0, 0.1)",
-        border: "1px solid #a8e400",
+        border: "1px solid #95e600",
         borderRadius: "50%", // Cerchio
         width: "50px",
         height: "50px",
@@ -48,7 +48,7 @@ const ScrollToTop = () => {
         transition: "all 0.3s ease",
         pointerEvents: visible ? "auto" : "none", // Non cliccabile se invisibile
         "&:hover": {
-          backgroundColor: "#a8e400",
+          backgroundColor: "#95e600",
           "& svg": { fill: "#000" }, // Freccia diventa nera al passaggio
         },
       }}
@@ -58,7 +58,7 @@ const ScrollToTop = () => {
         width="24"
         height="24"
         viewBox="0 0 24 24"
-        fill="#a8e400"
+        fill="#95e600"
         style={{ transition: "fill 0.3s" }}
       >
         <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />

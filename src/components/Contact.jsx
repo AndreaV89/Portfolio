@@ -14,7 +14,7 @@ const Contact = () => {
         }}
       >
         <span
-          style={{ color: "#a8e400", fontFamily: '"Fira Code", monospace' }}
+          style={{ color: "#95e600", fontFamily: '"Fira Code", monospace' }}
         >
           03.
         </span>{" "}
@@ -113,8 +113,8 @@ const Contact = () => {
           href="mailto:a.vannetti08@gmail.com"
           sx={{
             cursor: "none",
-            color: "#a8e400",
-            borderColor: "#a8e400",
+            color: "#95e600",
+            borderColor: "#95e600",
             padding: "15px 40px",
             fontFamily: '"Fira Code", monospace',
             fontSize: "1rem",
@@ -122,7 +122,7 @@ const Contact = () => {
             borderWidth: "2px",
             "&:hover": {
               borderWidth: "2px",
-              borderColor: "#a8e400",
+              borderColor: "#95e600",
               backgroundColor: "rgba(168, 228, 0, 0.1)",
               boxShadow: "0 0 20px rgba(168, 228, 0, 0.2)",
             },

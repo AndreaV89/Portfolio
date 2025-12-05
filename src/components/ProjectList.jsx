@@ -85,7 +85,7 @@ const ProjectList = () => {
               cursor: "none", // Importante: usiamo il tuo cursore custom
               "&:hover": {
                 background: "rgba(255, 255, 255, 0.03)", // Leggero sfondo al passaggio
-                borderLeft: "2px solid #a8e400", // Barra verde a sinistra
+                borderLeft: "2px solid #95e600", // Barra verde a sinistra
                 paddingLeft: "30px", // Spostamento verso destra
               },
             }}
@@ -108,7 +108,7 @@ const ProjectList = () => {
               sx={{
                 fontWeight: 600,
                 color:
-                  hoveredProject?.id === project.id ? "#a8e400" : "#e0e0e0", // Diventa verde se selezionato
+                  hoveredProject?.id === project.id ? "#95e600" : "#e0e0e0", // Diventa verde se selezionato
                 fontFamily: '"Inter", sans-serif',
                 letterSpacing: "-0.02em",
                 fontSize: { xs: "1.2rem", md: "1.5rem" },
@@ -174,7 +174,7 @@ const ProjectList = () => {
           <Box sx={{ mb: 2 }}>
             <Typography
               variant="caption"
-              sx={{ color: "#a8e400", fontFamily: '"Fira Code", monospace' }}
+              sx={{ color: "#95e600", fontFamily: '"Fira Code", monospace' }}
             >
               Stack:
             </Typography>
@@ -191,7 +191,7 @@ const ProjectList = () => {
               <Typography variant="caption" sx={{ color: "#666" }}>
                 Status: {hoveredProject.status}
               </Typography>
-              <Typography variant="caption" sx={{ color: "#a8e400" }}>
+              <Typography variant="caption" sx={{ color: "#95e600" }}>
                 {hoveredProject.progress}%
               </Typography>
             </Box>
@@ -202,7 +202,7 @@ const ProjectList = () => {
                 height: 4,
                 backgroundColor: "#333",
                 "& .MuiLinearProgress-bar": {
-                  backgroundColor: "#a8e400",
+                  backgroundColor: "#95e600",
                 },
               }}
             />

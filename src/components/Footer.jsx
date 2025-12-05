@@ -58,7 +58,7 @@ const Footer = () => {
             sx={{
               color: "#444",
               textDecoration: "none",
-              "&:hover": { color: "#a8e400" },
+              "&:hover": { color: "#95e600" },
               cursor: "none", // Mantiene il cursore custom
               fontFamily: "inherit",
               fontSize: "inherit",

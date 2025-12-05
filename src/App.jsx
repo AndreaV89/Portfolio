@@ -23,8 +23,8 @@ const sectionStyle = {
   flexDirection: "column",
   justifyContent: "center",
   position: "relative",
-  paddingTop: "100px",
-  paddingBottom: "60px",
+  //paddingTop: "100px",
+  //paddingBottom: "60px",
 };
 
 function App() {
@@ -85,7 +85,7 @@ function App() {
               >
                 <span
                   style={{
-                    color: "#a8e400",
+                    color: "#95e600",
                     fontFamily: '"Fira Code", monospace',
                   }}
                 >
@@ -102,7 +102,7 @@ function App() {
 
               <Typography variant="h2" sx={{ mb: 4, opacity: 0.8 }}>
                 Crafting immersive digital{" "}
-                <span style={{ color: "#a8e400" }}>experiences</span>.
+                <span style={{ color: "#95e600" }}>experiences</span>.
                 <br />
               </Typography>
 
@@ -118,9 +118,9 @@ function App() {
                   onClick={() => scrollToSection("work")}
                   sx={{
                     cursor: "none",
-                    borderBottom: "1px solid #a8e400",
+                    borderBottom: "1px solid #95e600",
                     pb: 0.5,
-                    "&:hover": { color: "#a8e400" },
+                    "&:hover": { color: "#95e600" },
                   }}
                 >
                   Progetti
@@ -135,7 +135,7 @@ function App() {
                     borderBottom: "1px solid #666",
                     pb: 0.5,
                     transition: "color 0.3s",
-                    "&:hover": { color: "#a8e400", borderColor: "#a8e400" },
+                    "&:hover": { color: "#95e600", borderColor: "#95e600" },
                   }}
                 >
                   Contattami
@@ -150,8 +150,8 @@ function App() {
                   sx={{
                     textDecoration: "none",
                     cursor: "none",
-                    color: "#a8e400",
-                    border: "1px solid #a8e400", // Un vero bottone bordato per risaltare
+                    color: "#95e600",
+                    border: "1px solid #95e600", // Un vero bottone bordato per risaltare
                     borderRadius: "4px",
                     px: 2, // Padding orizzontale
                     py: 0.5,
@@ -195,7 +195,7 @@ function App() {
             >
               <span
                 style={{
-                  color: "#a8e400",
+                  color: "#95e600",
                   fontFamily: '"Fira Code", monospace',
                 }}
               >

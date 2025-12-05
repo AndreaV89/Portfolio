@@ -45,7 +45,7 @@ const ScrollIndicator = ({ onClick }) => {
         sx={{
           width: "2px",
           height: "40px",
-          background: "linear-gradient(to bottom, #a8e400, transparent)",
+          background: "linear-gradient(to bottom, #95e600, transparent)",
           animation: `${bounce} 2s infinite`,
         }}
       />

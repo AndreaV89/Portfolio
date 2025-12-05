@@ -52,7 +52,7 @@ const Maintenance = () => {
         <Container maxWidth="sm" sx={{ textAlign: "center", zIndex: 1 }}>
           {/* Icona Warning stilizzata */}
           <Typography
-            sx={{ fontSize: "3rem", mb: 2, color: "#a8e400", opacity: 0.8 }}
+            sx={{ fontSize: "3rem", mb: 2, color: "#95e600", opacity: 0.8 }}
           >
             ⚠️
           </Typography>
@@ -82,13 +82,13 @@ const Maintenance = () => {
             >
               <Typography
                 variant="caption"
-                sx={{ fontFamily: '"Fira Code", monospace', color: "#a8e400" }}
+                sx={{ fontFamily: '"Fira Code", monospace', color: "#95e600" }}
               >
                 Status: Building
               </Typography>
               <Typography
                 variant="caption"
-                sx={{ fontFamily: '"Fira Code", monospace', color: "#a8e400" }}
+                sx={{ fontFamily: '"Fira Code", monospace', color: "#95e600" }}
               >
                 99%
               </Typography>
@@ -97,7 +97,7 @@ const Maintenance = () => {
               sx={{
                 height: 4,
                 backgroundColor: "rgba(255,255,255,0.1)",
-                "& .MuiLinearProgress-bar": { backgroundColor: "#a8e400" },
+                "& .MuiLinearProgress-bar": { backgroundColor: "#95e600" },
               }}
             />
           </Box>
@@ -119,7 +119,7 @@ const Maintenance = () => {
               alignItems: "center",
             }}
           >
-            <span style={{ color: "#a8e400", marginRight: "10px" }}>$</span>
+            <span style={{ color: "#95e600", marginRight: "10px" }}>$</span>
             {terminalLogs[logIndex]}
             <span className="blink">_</span>
           </Box>
@@ -135,7 +135,7 @@ const Maintenance = () => {
                 fontFamily: '"Fira Code", monospace',
                 cursor: "none",
                 textTransform: "none",
-                "&:hover": { borderColor: "#a8e400", color: "#a8e400" },
+                "&:hover": { borderColor: "#95e600", color: "#95e600" },
               }}
             >
               Contattami comunque

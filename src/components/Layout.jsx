@@ -1,5 +1,6 @@
 // src/components/Layout.jsx
 import { Box, Typography } from "@mui/material";
+import logo from "../assets/logo.svg";
 
 // Generiamo i numeri
 const lineNumbers = Array.from({ length: 200 }, (_, i) =>
@@ -11,35 +12,34 @@ const Layout = ({ children }) => {
     <Box sx={{ minHeight: "100vh", position: "relative" }}>
       {/* 1. LOGO: Fisso in alto a sinistra */}
       <Box
+        component="a"
+        href="/"
         sx={{
           position: "fixed",
-          top: { xs: "20px", md: "30px" },
+          top: { xs: "20px", md: "-30px" },
           left: { xs: "20px", md: "120px" },
           zIndex: 50,
-          display: "none",
+          display: "block",
+          cursor: "none",
         }}
       >
-        <Typography
-          variant="h6"
+        <Box
+          component="img"
+          src={logo}
+          alt="Andrea Vannetti Logo"
+          className="hover-target" // Per attivare l'effetto del cursore spotlight
           sx={{
-            fontFamily: '"Fira Code", monospace',
-            fontWeight: 700,
-            color: "#fff",
-            border: "1px solid rgba(255,255,255,0.2)",
-            padding: { xs: "3px 10px", md: "5px 15px" },
-            fontSize: { xs: "0.9rem", md: "1.25rem" },
-            backgroundColor: "rgba(0,0,0,0.5)",
-            backdropFilter: "blur(5px)",
-            "&:hover": {
-              borderColor: "#a8e400",
-              color: "#a8e400",
-              boxShadow: "0 0 15px rgba(168, 228, 0, 0.2)",
-            },
+            height: { xs: "40px", md: "250px" }, // Altezza responsive
+            width: "auto",
             transition: "all 0.3s ease",
+            filter: "brightness(0.8)", // Leggermente meno luminoso di default
+            "&:hover": {
+              filter:
+                "brightness(1) drop-shadow(0 0 10px rgba(168, 228, 0, 0.5))", // Si illumina al passaggio
+              transform: "scale(1.05)", // Leggero ingrandimento
+            },
           }}
-        >
-          &lt;Logo /&gt;
-        </Typography>
+        />
       </Box>
 
       {/* 2. GUTTER: Ora è FIXED e fuori dal flusso */}

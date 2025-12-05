@@ -32,7 +32,7 @@ const PrivacyModal = ({ open, onClose }) => {
       <DialogTitle
         sx={{
           fontFamily: '"Fira Code", monospace',
-          color: "#a8e400",
+          color: "#95e600",
           borderBottom: "1px solid #333",
         }}
       >
@@ -145,13 +145,13 @@ const PrivacyModal = ({ open, onClose }) => {
           variant="outlined"
           cursor="none"
           sx={{
-            color: "#a8e400",
-            borderColor: "#a8e400",
+            color: "#95e600",
+            borderColor: "#95e600",
             fontFamily: '"Fira Code", monospace',
             cursor: "none",
             "&:hover": {
               backgroundColor: "rgba(168, 228, 0, 0.1)",
-              borderColor: "#a8e400",
+              borderColor: "#95e600",
             },
           }}
         >

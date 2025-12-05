@@ -55,8 +55,8 @@ const SpotlightCursor = () => {
           left: 0,
           width: isHovering ? 20 : 12, // Si ingrandisce leggermente sui link
           height: isHovering ? 20 : 12,
-          backgroundColor: isHovering ? "transparent" : "#a8e400", // Pieno normale, vuoto sui link
-          border: "2px solid #a8e400",
+          backgroundColor: isHovering ? "transparent" : "#95e600", // Pieno normale, vuoto sui link
+          border: "2px solid #95e600",
           borderRadius: "50%",
           transform: `translate(${position.x - (isHovering ? 10 : 6)}px, ${
             position.y - (isHovering ? 10 : 6)

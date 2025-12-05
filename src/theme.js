@@ -8,7 +8,8 @@ const theme = createTheme({
       default: "#0a0a0a",
     },
     primary: {
-      main: "#a8e400",
+      // main: "#a8e400",
+      main: "#95e600",
     },
     text: {
       primary: "#ffffff",
@@ -31,7 +32,7 @@ const theme = createTheme({
     subtitle1: {
       fontFamily: '"Fira Code", monospace',
       fontSize: "1rem",
-      color: "#a8e400", // Il tuo verde
+      color: "#95e600", // Il tuo verde
     },
     body1: {
       fontSize: "1.1rem",
@@ -48,7 +49,7 @@ const theme = createTheme({
           backgroundImage: `radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px)`,
           backgroundSize: "30px 30px", // Distanza puntini
 
-          scrollbarColor: "#a8e400 #0a0a0a",
+          scrollbarColor: "#95e600 #0a0a0a",
           scrollbarWidth: "thin",
           cursor: "none", // Cursore sempre nascosto
         },

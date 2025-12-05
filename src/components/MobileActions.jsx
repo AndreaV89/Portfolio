@@ -64,8 +64,8 @@ const MobileActions = () => {
           target="_blank"
           sx={{
             ...buttonStyle,
-            borderColor: "#a8e400",
-            color: "#a8e400",
+            borderColor: "#95e600",
+            color: "#95e600",
             "&:hover": { backgroundColor: "rgba(168, 228, 0, 0.1)" },
           }}
         >
@@ -91,7 +91,7 @@ const MobileActions = () => {
           href={`mailto:${email}`}
           sx={{
             ...buttonStyle,
-            backgroundColor: "#a8e400",
+            backgroundColor: "#95e600",
             color: "#000",
             "&:hover": { backgroundColor: "#8cc200" },
           }}
