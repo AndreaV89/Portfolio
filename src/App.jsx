@@ -1,4 +1,3 @@
-// src/App.jsx
 import { useEffect, useRef } from "react";
 import { Box, Typography, Container } from "@mui/material";
 import Lenis from "lenis";
@@ -15,7 +14,6 @@ import Maintenance from "./components/Maintenance";
 // MAINTENANCE MODE
 const IS_MAINTENANCE_MODE = false;
 
-// Stile base
 const sectionStyle = {
   minHeight: "100vh",
   width: "100%",
@@ -24,7 +22,6 @@ const sectionStyle = {
   justifyContent: "center",
   position: "relative",
   paddingTop: { sm: "100px", md: "100px" },
-  //paddingBottom: "60px",
 };
 
 function App() {
@@ -148,8 +145,8 @@ function App() {
                 </Typography>
                 <Typography
                   component="a"
-                  href="/cv.pdf" // Assicurati che il file si chiami così in /public
-                  target="_blank" // Apre in una nuova scheda
+                  href="/cv.pdf"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="hover-target"
                   variant="subtitle1"
@@ -157,9 +154,9 @@ function App() {
                     textDecoration: "none",
                     cursor: "none",
                     color: "#95e600",
-                    border: "1px solid #95e600", // Un vero bottone bordato per risaltare
+                    border: "1px solid #95e600",
                     borderRadius: "4px",
-                    px: 2, // Padding orizzontale
+                    px: 2,
                     py: 0.5,
                     transition: "all 0.3s",
                     "&:hover": {

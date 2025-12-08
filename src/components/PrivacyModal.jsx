@@ -1,4 +1,3 @@
-// src/components/PrivacyModal.jsx
 import {
   Dialog,
   DialogTitle,
@@ -15,7 +14,6 @@ const PrivacyModal = ({ open, onClose }) => {
       open={open}
       onClose={onClose}
       scroll="paper"
-      // Z-Index alto per stare sopra a tutto (cursore, action bar, ecc.)
       sx={{ zIndex: 10000 }}
       PaperProps={{
         sx: {

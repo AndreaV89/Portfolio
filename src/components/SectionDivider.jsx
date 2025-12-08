@@ -1,4 +1,3 @@
-// src/components/SectionDivider.jsx
 import { Box, Typography } from "@mui/material";
 
 const SectionDivider = () => {
@@ -8,7 +7,7 @@ const SectionDivider = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        py: 4, // Padding verticale per dare aria
+        py: 4,
         opacity: 0.2,
         userSelect: "none",
       }}

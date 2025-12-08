@@ -1,4 +1,3 @@
-// src/theme.js
 import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
@@ -13,15 +12,15 @@ const theme = createTheme({
     },
     text: {
       primary: "#ffffff",
-      secondary: "#888888", // Grigio medio per i testi meno importanti
+      secondary: "#888888",
     },
   },
   typography: {
     fontFamily: '"Inter", sans-serif',
     h1: {
-      fontWeight: 900, // Molto grassetto
-      fontSize: "clamp(2.5rem, 6vw, 4.5rem)", // Si adatta allo schermo: enorme su desktop, grande su mobile
-      letterSpacing: "-0.02em", // Lettere vicine per un look moderno
+      fontWeight: 900,
+      fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
+      letterSpacing: "-0.02em",
       lineHeight: 1.1,
     },
     h2: {
@@ -32,26 +31,25 @@ const theme = createTheme({
     subtitle1: {
       fontFamily: '"Fira Code", monospace',
       fontSize: "1rem",
-      color: "#95e600", // Il tuo verde
+      color: "#95e600",
     },
     body1: {
       fontSize: "1.1rem",
       lineHeight: 1.8,
-      color: "#999", // Testo descrittivo grigio, non bianco sparato
+      color: "#999",
     },
   },
   components: {
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          backgroundColor: "#0a0a0a", // Nero profondo
-          // Ripristiniamo la griglia a puntini
+          backgroundColor: "#0a0a0a",
           backgroundImage: `radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px)`,
-          backgroundSize: "30px 30px", // Distanza puntini
+          backgroundSize: "30px 30px",
 
           scrollbarColor: "#95e600 #0a0a0a",
           scrollbarWidth: "thin",
-          cursor: "none", // Cursore sempre nascosto
+          cursor: "none",
         },
         "a, button": {
           cursor: "none",

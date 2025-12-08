@@ -1,4 +1,3 @@
-// src/components/Footer.jsx
 import { useState } from "react";
 import { Box, Typography, Link } from "@mui/material";
 import PrivacyModal from "./PrivacyModal";
@@ -44,13 +43,12 @@ const Footer = () => {
             fontSize: "0.75rem",
             mt: 1,
             display: "flex",
-            gap: 2, // Distanzia i due elementi
+            gap: 2,
             alignItems: "center",
           }}
         >
           <span>© {currentYear} Andrea Vannetti</span>
 
-          {/* Link alla Privacy (puoi mettere '#' per ora se non hai l'URL) */}
           <Link
             component="button"
             onClick={() => setOpenPrivacy(true)}
@@ -59,14 +57,14 @@ const Footer = () => {
               color: "#444",
               textDecoration: "none",
               "&:hover": { color: "#95e600" },
-              cursor: "none", // Mantiene il cursore custom
+              cursor: "none",
               fontFamily: "inherit",
               fontSize: "inherit",
               border: "none",
               background: "none",
               padding: 0,
             }}
-            className="hover-target" // Per far ingrandire il cursore verde
+            className="hover-target"
           >
             Privacy Policy
           </Link>

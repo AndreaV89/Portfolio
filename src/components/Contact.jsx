@@ -1,10 +1,8 @@
-// src/components/Contact.jsx
 import { Box, Typography, Button } from "@mui/material";
 
 const Contact = () => {
   return (
     <Box sx={{ width: "100%", overflow: "hidden" }}>
-      {/* RIPRISTINATO IL TITOLO GRANDE */}
       <Typography
         variant="h4"
         sx={{

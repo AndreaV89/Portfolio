@@ -1,18 +1,16 @@
-// src/components/MobileActions.jsx
 import { useState, useEffect } from "react";
 import { Box, Button, Fade } from "@mui/material";
 
 const MobileActions = () => {
   const [visible, setVisible] = useState(false);
-  const phoneNumber = "+393470587552"; // Tuo numero
-  const email = "a.vannetti08@gmail.com"; // Tua email
+  const phoneNumber = "+393470587552";
+  const email = "a.vannetti08@gmail.com";
 
   useEffect(() => {
     const handleScroll = () => {
-      // Calcoliamo quanto manca alla fine della pagina
       const scrolledToBottom =
         window.innerHeight + window.scrollY >=
-        document.documentElement.scrollHeight - 600; // Appare 600px prima della fine
+        document.documentElement.scrollHeight - 600;
 
       setVisible(scrolledToBottom);
     };
@@ -21,7 +19,6 @@ const MobileActions = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Stile comune per i bottoni
   const buttonStyle = {
     flex: 1,
     minWidth: "auto",
@@ -41,7 +38,7 @@ const MobileActions = () => {
     <Fade in={visible}>
       <Box
         sx={{
-          display: { xs: "flex", md: "none" }, // Solo mobile
+          display: { xs: "flex", md: "none" },
           position: "fixed",
           bottom: "20px",
           left: "50%",
@@ -50,7 +47,7 @@ const MobileActions = () => {
           zIndex: 9999,
           width: "95%",
           maxWidth: "400px",
-          backgroundColor: "rgba(10, 10, 10, 0.9)", // Sfondo scuro coprente
+          backgroundColor: "rgba(10, 10, 10, 0.9)",
           backdropFilter: "blur(12px)",
           padding: "12px",
           borderRadius: "16px",
@@ -69,7 +66,6 @@ const MobileActions = () => {
             "&:hover": { backgroundColor: "rgba(168, 228, 0, 0.1)" },
           }}
         >
-          {/* Icona Documento */}
           <svg
             width="20"
             height="20"
@@ -85,7 +81,8 @@ const MobileActions = () => {
           </svg>
           CV
         </Button>
-        {/* 1. EMAIL (Say Hello) */}
+
+        {/* EMAIL */}
         <Button
           variant="contained"
           href={`mailto:${email}`}
@@ -96,7 +93,6 @@ const MobileActions = () => {
             "&:hover": { backgroundColor: "#8cc200" },
           }}
         >
-          {/* Icona Mail Semplice */}
           <svg
             width="20"
             height="20"
@@ -113,14 +109,14 @@ const MobileActions = () => {
           Email
         </Button>
 
-        {/* 2. WHATSAPP */}
+        {/* WHATSAPP */}
         <Button
           variant="outlined"
           href={`https://wa.me/${phoneNumber.replace("+", "")}`}
           target="_blank"
           sx={{
             ...buttonStyle,
-            borderColor: "#25D366", // Verde WhatsApp
+            borderColor: "#25D366",
             color: "#25D366",
             "&:hover": {
               backgroundColor: "rgba(37, 211, 102, 0.1)",
@@ -162,7 +158,7 @@ const MobileActions = () => {
           WhatsApp
         </Button>
 
-        {/* 3. CHIAMA */}
+        {/* CHIAMA */}
         <Button
           variant="outlined"
           href={`tel:${phoneNumber}`}

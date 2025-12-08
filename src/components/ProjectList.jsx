@@ -1,4 +1,3 @@
-// src/components/ProjectList.jsx
 import { useState } from "react";
 import {
   Box,
@@ -8,7 +7,6 @@ import {
   useTheme,
 } from "@mui/material";
 
-// 1. I DATI DEI PROGETTI (Modifica questi in futuro!)
 const projects = [
   {
     id: "01",
@@ -48,9 +46,7 @@ const ProjectList = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  // Funzione che aggiorna la posizione mentre muovi il mouse
   const handleMouseMove = (e) => {
-    // Aggiorniamo la posizione solo se NON siamo su mobile
     if (!isMobile) {
       setMousePos({ x: e.clientX, y: e.clientY });
     }
@@ -65,11 +61,11 @@ const ProjectList = () => {
         ~/projects &gt; ls -la
       </Typography>
 
-      {/* 2. LA LISTA DEI PROGETTI */}
+      {/* LISTA DEI PROGETTI */}
       <Box
         sx={{ display: "flex", flexDirection: "column", gap: 1 }}
-        onMouseMove={handleMouseMove} // Ascoltiamo il mouse su tutta la lista
-        onMouseLeave={() => setHoveredProject(null)} // Nascondi tooltip se esci dalla lista
+        onMouseMove={handleMouseMove}
+        onMouseLeave={() => setHoveredProject(null)}
       >
         {projects.map((project) => (
           <Box
@@ -82,15 +78,15 @@ const ProjectList = () => {
               padding: "15px 20px",
               borderLeft: "2px solid transparent",
               transition: "all 0.2s ease",
-              cursor: "none", // Importante: usiamo il tuo cursore custom
+              cursor: "none",
               "&:hover": {
-                background: "rgba(255, 255, 255, 0.03)", // Leggero sfondo al passaggio
-                borderLeft: "2px solid #95e600", // Barra verde a sinistra
-                paddingLeft: "30px", // Spostamento verso destra
+                background: "rgba(255, 255, 255, 0.03)",
+                borderLeft: "2px solid #95e600",
+                paddingLeft: "30px",
               },
             }}
           >
-            {/* Numero ID (01, 02...) */}
+            {/* Numero ID */}
             <Typography
               sx={{
                 fontFamily: '"Fira Code", monospace',
@@ -108,7 +104,7 @@ const ProjectList = () => {
               sx={{
                 fontWeight: 600,
                 color:
-                  hoveredProject?.id === project.id ? "#95e600" : "#e0e0e0", // Diventa verde se selezionato
+                  hoveredProject?.id === project.id ? "#95e600" : "#e0e0e0",
                 fontFamily: '"Inter", sans-serif',
                 letterSpacing: "-0.02em",
                 fontSize: { xs: "1.2rem", md: "1.5rem" },
@@ -117,7 +113,7 @@ const ProjectList = () => {
               {project.name}
             </Typography>
 
-            {/* Estensione finta .js/.tsx per stile */}
+            {/* Estensione finta .tsx */}
             <Typography
               sx={{
                 ml: 1,
@@ -132,7 +128,7 @@ const ProjectList = () => {
         ))}
       </Box>
 
-      {/* 3. IL TOOLTIP FLOTTANTE (Appare solo se hoveredProject esiste) */}
+      {/* TOOLTIP */}
       {!isMobile && hoveredProject && (
         <Box
           sx={{
@@ -140,16 +136,16 @@ const ProjectList = () => {
             left: mousePos.x + 40,
             top: mousePos.y + 20,
             width: "300px",
-            backgroundColor: "rgba(10, 10, 10, 0.95)", // Quasi nero
+            backgroundColor: "rgba(10, 10, 10, 0.95)",
             border: "1px solid #333",
             backdropFilter: "blur(10px)",
             padding: 3,
-            zIndex: 9999, // Sopra a tutto
-            pointerEvents: "none", // Il mouse non ci interagisce
+            zIndex: 9999,
+            pointerEvents: "none",
             boxShadow: "0 10px 40px rgba(0,0,0,0.5)",
           }}
         >
-          {/* Intestazione Tooltip */}
+          {/* Intestazione */}
           <Typography
             variant="caption"
             sx={{
@@ -170,7 +166,7 @@ const ProjectList = () => {
             {hoveredProject.description}
           </Typography>
 
-          {/* Tech Stack */}
+          {/* Stack */}
           <Box sx={{ mb: 2 }}>
             <Typography
               variant="caption"

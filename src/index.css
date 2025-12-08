@@ -1,17 +1,14 @@
-/* src/index.css */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Fira+Code:wght@400;500&display=swap");
 
-/* Reset e Base */
 html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #0a0a0a; /* Il nero di base */
+  background-color: #0a0a0a;
   color: white;
-  overflow-x: hidden; /* Evita scroll orizzontale */
+  overflow-x: hidden;
 }
 
-/* Configurazioni Lenis (Manteniamo lo scroll fluido inerziale) */
 html.lenis,
 html.lenis body {
   height: auto;
@@ -20,7 +17,6 @@ html.lenis body {
   scroll-behavior: auto !important;
 }
 
-/* Scrollbar nascosta per pulizia */
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;

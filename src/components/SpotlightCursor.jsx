@@ -32,7 +32,6 @@ const SpotlightCursor = () => {
 
   return (
     <>
-      {/* 1. IL BAGLIORE (TORCIA) */}
       <Box
         sx={{
           position: "fixed",
@@ -41,30 +40,27 @@ const SpotlightCursor = () => {
           width: "100vw",
           height: "100vh",
           pointerEvents: "none",
-          zIndex: 10998, // Appena sotto il cursore puntatore
-          // Raggio ridotto a 350px per essere meno invasivo
+          zIndex: 10998,
           background: `radial-gradient(350px circle at ${position.x}px ${position.y}px, rgba(168, 228, 0, 0.07), transparent 40%)`,
         }}
       />
-
-      {/* 2. IL PUNTATORE VERO E PROPRIO (Piccolo cerchio) */}
       <Box
         sx={{
           position: "fixed",
           top: 0,
           left: 0,
-          width: isHovering ? 20 : 12, // Si ingrandisce leggermente sui link
+          width: isHovering ? 20 : 12,
           height: isHovering ? 20 : 12,
-          backgroundColor: isHovering ? "transparent" : "#95e600", // Pieno normale, vuoto sui link
+          backgroundColor: isHovering ? "transparent" : "#95e600",
           border: "2px solid #95e600",
           borderRadius: "50%",
           transform: `translate(${position.x - (isHovering ? 10 : 6)}px, ${
             position.y - (isHovering ? 10 : 6)
-          }px)`, // Centriamo perfettamente
+          }px)`,
           pointerEvents: "none",
-          zIndex: 10999, // Sopra a tutto
-          transition: "width 0.2s, height 0.2s, background-color 0.2s", // Animazione fluida
-          boxShadow: "0 0 10px rgba(168, 228, 0, 0.5)", // Un piccolo alone extra sul puntatore
+          zIndex: 10999,
+          transition: "width 0.2s, height 0.2s, background-color 0.2s",
+          boxShadow: "0 0 10px rgba(168, 228, 0, 0.5)",
         }}
       />
     </>

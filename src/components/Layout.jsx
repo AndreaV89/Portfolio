@@ -1,8 +1,6 @@
-// src/components/Layout.jsx
 import { Box, Typography } from "@mui/material";
 import logo from "../assets/logo.svg";
 
-// Generiamo i numeri
 const lineNumbers = Array.from({ length: 200 }, (_, i) =>
   (i + 1).toString().padStart(2, "0")
 );
@@ -10,7 +8,7 @@ const lineNumbers = Array.from({ length: 200 }, (_, i) =>
 const Layout = ({ children }) => {
   return (
     <Box sx={{ minHeight: "100vh", position: "relative" }}>
-      {/* 1. LOGO: Fisso in alto a sinistra */}
+      {/* LOGO */}
       <Box
         component="a"
         href="/"
@@ -27,42 +25,42 @@ const Layout = ({ children }) => {
           component="img"
           src={logo}
           alt="Andrea Vannetti Logo"
-          className="hover-target" // Per attivare l'effetto del cursore spotlight
+          className="hover-target"
           sx={{
-            height: { xs: "25px", md: "100px", lg: "100px", xl: "250px" }, // Altezza responsive
+            height: { xs: "25px", md: "100px", lg: "100px", xl: "250px" },
             width: "auto",
             transition: "all 0.3s ease",
-            filter: "brightness(0.8)", // Leggermente meno luminoso di default
+            filter: "brightness(0.8)",
             "&:hover": {
               filter:
-                "brightness(1) drop-shadow(0 0 10px rgba(168, 228, 0, 0.5))", // Si illumina al passaggio
-              transform: "scale(1.05)", // Leggero ingrandimento
+                "brightness(1) drop-shadow(0 0 10px rgba(168, 228, 0, 0.5))",
+              transform: "scale(1.05)",
             },
           }}
         />
       </Box>
 
-      {/* 2. GUTTER: Ora è FIXED e fuori dal flusso */}
+      {/* GUTTER */}
       <Box
         sx={{
-          position: "absolute", // <--- FISSATO
+          position: "absolute",
           top: 0,
           left: 0,
-          bottom: 0, // Occupa tutta l'altezza
+          bottom: 0,
           width: "60px",
-          display: { xs: "none", md: "block" }, // Nascosto su mobile
+          display: { xs: "none", md: "block" },
           textAlign: "right",
-          paddingRight: "15px", // Spazio tra numero e contenuto
-          paddingTop: "10px", // Parte sotto il logo
+          paddingRight: "15px",
+          paddingTop: "10px",
           borderRight: "1px solid rgba(255, 255, 255, 0.05)",
           userSelect: "none",
           color: "#333",
           fontFamily: '"Fira Code", monospace',
           fontSize: "0.9rem",
           lineHeight: 1.6,
-          zIndex: 40, // Sopra lo sfondo, sotto il logo
-          backgroundColor: "transparent", // Trasparente così si vede lo sfondo sotto
-          overflow: "hidden", // Nasconde numeri in eccesso
+          zIndex: 40,
+          backgroundColor: "transparent",
+          overflow: "hidden",
         }}
       >
         {lineNumbers.map((num) => (
@@ -70,7 +68,7 @@ const Layout = ({ children }) => {
         ))}
       </Box>
 
-      {/* 3. AREA CONTENUTO: Nessun margine sinistro forzato qui */}
+      {/* AREA CONTENUTO */}
       <Box sx={{ width: "100%" }}>{children}</Box>
     </Box>
   );

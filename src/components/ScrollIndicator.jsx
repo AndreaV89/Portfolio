@@ -1,8 +1,6 @@
-// src/components/ScrollIndicator.jsx
 import { Box, Typography } from "@mui/material";
 import { keyframes } from "@emotion/react";
 
-// Animazione di rimbalzo
 const bounce = keyframes`
   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
   40% { transform: translateY(-10px); }

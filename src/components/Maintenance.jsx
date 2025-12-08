@@ -1,4 +1,3 @@
-// src/components/Maintenance.jsx
 import { useState, useEffect } from "react";
 import {
   Box,
@@ -23,7 +22,6 @@ const terminalLogs = [
 const Maintenance = () => {
   const [logIndex, setLogIndex] = useState(0);
 
-  // Effetto per far scorrere i messaggi del terminale
   useEffect(() => {
     const interval = setInterval(() => {
       setLogIndex((prev) => (prev + 1) % terminalLogs.length);
@@ -50,14 +48,12 @@ const Maintenance = () => {
         }}
       >
         <Container maxWidth="sm" sx={{ textAlign: "center", zIndex: 1 }}>
-          {/* Icona Warning stilizzata */}
           <Typography
             sx={{ fontSize: "3rem", mb: 2, color: "#95e600", opacity: 0.8 }}
           >
             ⚠️
           </Typography>
 
-          {/* Titolo Decriptato */}
           <Box sx={{ mb: 4 }}>
             <Typography
               text="SYSTEM_UNDER_CONSTRUCTION"
@@ -75,7 +71,6 @@ const Maintenance = () => {
             migliore. Torneremo online a breve.
           </Typography>
 
-          {/* Barra di caricamento stile Hacker */}
           <Box sx={{ width: "100%", mb: 2 }}>
             <Box
               sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}
@@ -102,7 +97,6 @@ const Maintenance = () => {
             />
           </Box>
 
-          {/* Finto Terminale */}
           <Box
             sx={{
               mt: 4,
@@ -114,7 +108,7 @@ const Maintenance = () => {
               fontFamily: '"Fira Code", monospace',
               fontSize: "0.85rem",
               color: "#666",
-              height: "40px", // Altezza fissa per evitare salti
+              height: "40px",
               display: "flex",
               alignItems: "center",
             }}
@@ -124,11 +118,10 @@ const Maintenance = () => {
             <span className="blink">_</span>
           </Box>
 
-          {/* Bottone Contatto (per non perdere opportunità) */}
           <Box sx={{ mt: 6 }}>
             <Button
               variant="outlined"
-              href="mailto:a.vannetti08@gmail.com" // Metti la tua email
+              href="mailto:a.vannetti08@gmail.com"
               sx={{
                 borderColor: "#333",
                 color: "#888",
@@ -143,7 +136,6 @@ const Maintenance = () => {
           </Box>
         </Container>
 
-        {/* CSS per il cursore lampeggiante del terminale */}
         <style>{`
           .blink { animation: blinker 1s linear infinite; }
           @keyframes blinker { 50% { opacity: 0; } }
