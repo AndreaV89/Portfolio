@@ -56,6 +56,7 @@ const Contact = () => {
         </div>
 
         <Box sx={{ pl: { xs: 2, md: 4 }, my: 1 }}>
+          {/* Email */}
           <div style={{ marginBottom: "8px" }}>
             <span style={{ color: "#95d2f2" }}>email</span>:
             <a
@@ -69,21 +70,23 @@ const Contact = () => {
               ,
             </a>
           </div>
+
+          {/* Telefono */}
           <div style={{ marginBottom: "8px", whiteSpace: "nowrap" }}>
-            <span style={{ color: "#95d2f2" }}>github</span>:
+            <span style={{ color: "#95d2f2" }}>Tel.</span>:
             <a
-              href="https://github.com/AndreaV89"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="tel:+393470587552"
               style={{ textDecoration: "none", color: "#FFF" }}
             >
               <span style={{ color: "#ce9178", cursor: "none" }}>
                 {" "}
-                "github.com/AndreaV89"
+                "(+39) 347 0587552"
               </span>
               ,
             </a>
           </div>
+
+          {/* Linkedin */}
           <div>
             <span style={{ color: "#95d2f2" }}>linkedin</span>:
             <a

@@ -143,30 +143,6 @@ function App() {
                 >
                   Contattami
                 </Typography>
-                <Typography
-                  component="a"
-                  href="/cv.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover-target"
-                  variant="subtitle1"
-                  sx={{
-                    textDecoration: "none",
-                    cursor: "none",
-                    color: "#95e600",
-                    border: "1px solid #95e600",
-                    borderRadius: "4px",
-                    px: 2,
-                    py: 0.5,
-                    transition: "all 0.3s",
-                    "&:hover": {
-                      backgroundColor: "rgba(168, 228, 0, 0.1)",
-                      boxShadow: "0 0 10px rgba(168, 228, 0, 0.3)",
-                    },
-                  }}
-                >
-                  Download CV
-                </Typography>
               </Box>
             </Box>
             <ScrollIndicator onClick={() => scrollToSection("work")} />

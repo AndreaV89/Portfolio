@@ -55,33 +55,6 @@ const MobileActions = () => {
           boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
         }}
       >
-        <Button
-          variant="outlined"
-          href="/cv.pdf"
-          target="_blank"
-          sx={{
-            ...buttonStyle,
-            borderColor: "#95e600",
-            color: "#95e600",
-            "&:hover": { backgroundColor: "rgba(168, 228, 0, 0.1)" },
-          }}
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-            <polyline points="14 2 14 8 20 8" />
-          </svg>
-          CV
-        </Button>
-
         {/* EMAIL */}
         <Button
           variant="contained"
