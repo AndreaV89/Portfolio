@@ -58,7 +58,7 @@ const Contact = () => {
         <Box sx={{ pl: { xs: 2, md: 4 }, my: 1 }}>
           {/* Email */}
           <div style={{ marginBottom: "8px" }}>
-            <span style={{ color: "#95d2f2" }}>email</span>:
+            <span style={{ color: "#95d2f2" }}>E-mail</span>:
             <a
               href="mailto:a.vannetti08@gmail.com"
               style={{ textDecoration: "none", color: "#FFF" }}
@@ -88,7 +88,7 @@ const Contact = () => {
 
           {/* Linkedin */}
           <div>
-            <span style={{ color: "#95d2f2" }}>linkedin</span>:
+            <span style={{ color: "#95d2f2" }}>Linkedin</span>:
             <a
               href="www.linkedin.com/in/andrea-vannetti-215105153"
               target="_blank"

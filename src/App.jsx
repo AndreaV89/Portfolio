@@ -11,6 +11,8 @@ import MobileActions from "./components/MobileActions";
 import ScrollToTop from "./components/ScrollToTop";
 import Maintenance from "./components/Maintenance";
 
+import ProjectListProva from "./components/ProjectListProva";
+
 // MAINTENANCE MODE
 const IS_MAINTENANCE_MODE = false;
 
@@ -98,8 +100,8 @@ function App() {
               </Box>
 
               <Typography variant="h2" sx={{ mb: 4, opacity: 0.8 }}>
-                Crafting immersive digital{" "}
-                <span style={{ color: "#95e600" }}>experiences</span>.
+                Crafting immersive{" "}
+                <span style={{ color: "#95e600" }}>digital experiences</span>.
                 <br />
               </Typography>
 
@@ -194,7 +196,11 @@ function App() {
           <Box
             id="contact"
             className="snap-section"
-            sx={{ ...sectionStyle, justifyContent: "flex-start", pt: "100px" }}
+            sx={{
+              ...sectionStyle,
+              justifyContent: "flex-start",
+              pt: "100px",
+            }}
           >
             <Box
               sx={{
@@ -207,9 +213,9 @@ function App() {
             >
               <Contact />
             </Box>
-            <Footer />
           </Box>
         </Container>
+        <Footer />
         <MobileActions />
         <ScrollToTop />
       </Layout>

@@ -16,13 +16,25 @@ const Footer = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          mt: 20,
-          mb: 4,
-          opacity: 0.7,
+          mt: 15,
+          mb: 0,
+          pb: 4,
+          opacity: 0.8,
           transition: "opacity 0.3s",
           "&:hover": { opacity: 1 },
         }}
       >
+        <Box
+          sx={{
+            width: "100%",
+            maxWidth: "65%",
+            height: "1px",
+            background:
+              "linear-gradient(90deg, transparent 0%, #95e600 50%, transparent 100%)",
+            opacity: 0.3,
+            mb: 6,
+          }}
+        />
         <Typography
           variant="body2"
           sx={{
@@ -32,7 +44,7 @@ const Footer = () => {
             textAlign: "center",
           }}
         >
-          Built with React & MaterialUI
+          Built with ❤️ using React & MaterialUI
         </Typography>
 
         <Typography
