@@ -10,6 +10,13 @@ import Footer from "./components/Footer";
 import MobileActions from "./components/MobileActions";
 import ScrollToTop from "./components/ScrollToTop";
 import Maintenance from "./components/Maintenance";
+import {
+  ZoomIn,
+  FadeUp,
+  SlideIn,
+  StaggerContainer,
+  StaggerItem,
+} from "./components/Animations";
 
 import ProjectListProva from "./components/ProjectListProva";
 
@@ -69,83 +76,97 @@ function App() {
       <Layout>
         {/* HERO */}
         <Container
-          maxWidth="md"
+          //maxWidth="md"
           sx={{ px: { xs: 2, md: 4 }, pl: { md: "80px" } }}
         >
           <Box sx={sectionStyle}>
             <Box>
-              <Typography
-                variant="h4"
-                sx={{
-                  mb: { xs: 4, md: 6 },
-                  fontWeight: 700,
-                  fontSize: { xs: "1.5rem", md: "2.125rem" },
-                }}
-              >
-                <span
-                  style={{
-                    color: "#95e600",
-                    fontFamily: '"Fira Code", monospace',
-                  }}
-                >
-                  01.
-                </span>
-                <span> {"Start />"}</span>
-              </Typography>
-
-              <Box sx={{ mb: 2 }}>
-                <Typography variant="h1" color="white">
-                  Andrea Vannetti
-                </Typography>
-              </Box>
-
-              <Typography variant="h2" sx={{ mb: 4, opacity: 0.8 }}>
-                Crafting immersive{" "}
-                <span style={{ color: "#95e600" }}>digital experiences</span>.
-                <br />
-              </Typography>
-
-              <Typography variant="body1" sx={{ maxWidth: "500px", mb: 6 }}>
-                Trasformo idee complesse in interfacce web intuitive e moderne,
-                curando ogni dettaglio dall'idea al deploy.
-              </Typography>
-
-              <Box
-                sx={{
-                  display: "flex",
-                  gap: 4,
-                  justifyContent: { xs: "space-around", md: "left" },
-                }}
-              >
+              <SlideIn>
                 <Typography
-                  variant="subtitle1"
-                  className="hover-target"
-                  onClick={() => scrollToSection("work")}
+                  variant="h4"
                   sx={{
-                    cursor: "none",
-                    borderBottom: "1px solid #95e600",
-                    pb: 0.5,
-                    "&:hover": { color: "#95e600" },
+                    mb: { xs: 4, md: 6 },
+                    fontWeight: 700,
+                    fontSize: { xs: "1.5rem", md: "2.125rem" },
                   }}
                 >
-                  Progetti
+                  <span
+                    style={{
+                      color: "#95e600",
+                      fontFamily: '"Fira Code", monospace',
+                    }}
+                  >
+                    01.
+                  </span>
+                  <span> {"Start />"}</span>
                 </Typography>
-                <Typography
-                  variant="subtitle1"
-                  className="hover-target"
-                  onClick={() => scrollToSection("contact")}
+              </SlideIn>
+
+              <ZoomIn delay={0.2}>
+                <Box sx={{ mb: 2 }}>
+                  <Typography variant="h1" color="white">
+                    Andrea Vannetti
+                  </Typography>
+                </Box>
+              </ZoomIn>
+
+              <FadeUp delay={0.4}>
+                <Typography variant="h2" sx={{ mb: 4, opacity: 0.8 }}>
+                  Crafting immersive{" "}
+                  <span style={{ color: "#95e600" }}>digital experiences</span>.
+                  <br />
+                </Typography>
+              </FadeUp>
+
+              <FadeUp delay={0.6}>
+                <Typography variant="body1" sx={{ maxWidth: "500px", mb: 6 }}>
+                  Trasformo idee complesse in interfacce web intuitive e
+                  moderne, curando ogni dettaglio dall'idea al deploy.
+                </Typography>
+              </FadeUp>
+
+              <StaggerContainer>
+                <Box
                   sx={{
-                    cursor: "none",
-                    color: "#666",
-                    borderBottom: "1px solid #666",
-                    pb: 0.5,
-                    transition: "color 0.3s",
-                    "&:hover": { color: "#95e600", borderColor: "#95e600" },
+                    display: "flex",
+                    gap: 4,
+                    justifyContent: { xs: "space-around", md: "left" },
                   }}
                 >
-                  Contattami
-                </Typography>
-              </Box>
+                  <StaggerItem>
+                    <Typography
+                      variant="subtitle1"
+                      className="hover-target"
+                      onClick={() => scrollToSection("work")}
+                      sx={{
+                        cursor: "none",
+                        borderBottom: "1px solid #95e600",
+                        pb: 0.5,
+                        "&:hover": { color: "#95e600" },
+                      }}
+                    >
+                      Progetti
+                    </Typography>
+                  </StaggerItem>
+                  <StaggerItem>
+                    <Typography
+                      variant="subtitle1"
+                      className="hover-target"
+                      onClick={() => scrollToSection("contact")}
+                      sx={{
+                        cursor: "none",
+                        color: "#666",
+                        borderBottom: "1px solid #666",
+                        pb: 0.5,
+                        transition: "color 0.3s",
+                        "&:hover": { color: "#95e600", borderColor: "#95e600" },
+                      }}
+                    >
+                      Contattami
+                    </Typography>
+                  </StaggerItem>
+                </Box>
+              </StaggerContainer>
             </Box>
             <ScrollIndicator onClick={() => scrollToSection("work")} />
           </Box>
@@ -163,34 +184,37 @@ function App() {
           }}
         >
           <Container
-            maxWidth="md"
+            //maxWidth="md"
             sx={{ px: { xs: 2, md: 4 }, pl: { md: "80px" } }}
           >
-            <Typography
-              variant="h4"
-              sx={{
-                mb: { xs: 4, md: 6 },
-                fontWeight: 700,
-                fontSize: { xs: "1.5rem", md: "2.125rem" },
-              }}
-            >
-              <span
-                style={{
-                  color: "#95e600",
-                  fontFamily: '"Fira Code", monospace',
+            <SlideIn>
+              <Typography
+                variant="h4"
+                sx={{
+                  mb: { xs: 4, md: 6 },
+                  fontWeight: 700,
+                  fontSize: { xs: "1.5rem", md: "2.125rem" },
                 }}
               >
-                02.
-              </span>
-              {" Selected Works />"}
-            </Typography>
+                <span
+                  style={{
+                    color: "#95e600",
+                    fontFamily: '"Fira Code", monospace',
+                  }}
+                >
+                  02.
+                </span>
+                {" Selected Works />"}
+              </Typography>
+            </SlideIn>
             <ProjectList />
+            {/* <ProjectListProva /> */}
           </Container>
         </Box>
 
         {/* CONTATTI */}
         <Container
-          maxWidth="md"
+          //maxWidth="md"
           sx={{ px: { xs: 2, md: 4 }, pl: { md: "80px" } }}
         >
           <Box
