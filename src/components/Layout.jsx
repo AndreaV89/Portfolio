@@ -1,5 +1,4 @@
 import { Box, Typography } from "@mui/material";
-import logo from "../assets/logo.svg";
 
 const lineNumbers = Array.from({ length: 200 }, (_, i) =>
   (i + 1).toString().padStart(2, "0")
@@ -8,38 +7,6 @@ const lineNumbers = Array.from({ length: 200 }, (_, i) =>
 const Layout = ({ children }) => {
   return (
     <Box sx={{ minHeight: "100vh", position: "relative" }}>
-      {/* LOGO */}
-      <Box
-        component="a"
-        href="/"
-        sx={{
-          position: "fixed",
-          top: { xs: "15px", md: "15px", lg: "0" },
-          left: { xs: "15px", md: "100px" },
-          zIndex: 50,
-          display: { xs: "none", lg: "block" },
-          cursor: "none",
-        }}
-      >
-        <Box
-          component="img"
-          src={logo}
-          alt="Andrea Vannetti Logo"
-          className="hover-target"
-          sx={{
-            height: { xs: "25px", md: "100px", lg: "100px", xl: "250px" },
-            width: "auto",
-            transition: "all 0.3s ease",
-            filter: "brightness(0.8)",
-            "&:hover": {
-              filter:
-                "brightness(1) drop-shadow(0 0 10px rgba(168, 228, 0, 0.5))",
-              transform: "scale(1.05)",
-            },
-          }}
-        />
-      </Box>
-
       {/* GUTTER */}
       <Box
         sx={{

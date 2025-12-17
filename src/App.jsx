@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import MobileActions from "./components/MobileActions";
 import ScrollToTop from "./components/ScrollToTop";
 import Maintenance from "./components/Maintenance";
+import Navbar from "./components/Navbar";
 import {
   ZoomIn,
   FadeUp,
@@ -73,10 +74,13 @@ function App() {
     <>
       <SpotlightCursor />
 
+      <Navbar onNavClick={scrollToSection} />
+
       <Layout>
         {/* HERO */}
         <Container
-          //maxWidth="md"
+          id="home"
+          maxWidth="lg"
           sx={{ px: { xs: 2, md: 4 }, pl: { md: "80px" } }}
         >
           <Box sx={sectionStyle}>
