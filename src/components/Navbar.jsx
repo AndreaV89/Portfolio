@@ -66,7 +66,7 @@ const Navbar = ({ onNavClick }) => {
               src={logo}
               alt="Logo"
               sx={{
-                height: "60px", // Ora puoi mettere un'altezza fissa e si vedrà gigante!
+                height: "80px", // Ora puoi mettere un'altezza fissa e si vedrà gigante!
                 width: "auto", // Mantiene le proporzioni rettangolari naturali
               }}
             />
@@ -82,7 +82,7 @@ const Navbar = ({ onNavClick }) => {
                 sx={{
                   color: "#fff",
                   fontFamily: '"Fira Code", monospace',
-                  fontSize: "1rem",
+                  fontSize: "1.2rem",
                   textTransform: "none",
                   cursor: "none",
                   position: "relative",

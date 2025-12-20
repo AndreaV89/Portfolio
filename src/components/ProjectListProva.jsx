@@ -5,8 +5,7 @@ const projects = [
   {
     id: "01",
     name: "Succulentarte",
-    description:
-      "E-commerce e catalogo di piante succulente con Dashboard di gestione.",
+    description: "Catalogo di piante succulente con Dashboard di gestione.",
     stack: "React / Node.js / Vercel",
     image: "/succulentarte.jpg",
     link: "https://succulentarte.com",
@@ -16,7 +15,7 @@ const projects = [
     id: "02",
     name: "Cresta Dell'Angiolo",
     description:
-      "Sito web per un cammino escursionistico nel cuore del Chianti.",
+      "Pagina Web della Cresta dell'Angiolo, cammino escursionistico sui monti del Chianti",
     stack: "Wordpress / React",
     image: "/cresta-angiolo.jpg",
     link: "https://crestadellangiolo.it",
@@ -31,6 +30,16 @@ const projects = [
     image: "/radici.jpg",
     link: "#",
     status: "Prototyping",
+  },
+  {
+    id: "04",
+    name: "Casanova di Bricciano",
+    description:
+      "Sito web per una azienda vinicola tra le colline di Gaiole in Chianti",
+    stack: "Wordpress",
+    image: "/casanova-bricciano.jpg",
+    link: "https://www.casanovadibricciano.it/",
+    status: "Live",
   },
 ];
 
