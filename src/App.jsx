@@ -20,6 +20,7 @@ import {
 } from "./components/Animations";
 
 import ProjectListProva from "./components/ProjectListProva";
+import ContactProva from "./components/ContactProva";
 
 // MAINTENANCE MODE
 const IS_MAINTENANCE_MODE = false;
@@ -240,6 +241,7 @@ function App() {
               }}
             >
               <Contact />
+              {/* <ContactProva /> */}
             </Box>
           </Box>
         </Container>
