@@ -19,9 +19,6 @@ import {
   StaggerItem,
 } from "./components/Animations";
 
-import ProjectListProva from "./components/ProjectListProva";
-import ContactProva from "./components/ContactProva";
-
 // MAINTENANCE MODE
 const IS_MAINTENANCE_MODE = false;
 
@@ -189,7 +186,7 @@ function App() {
           }}
         >
           <Container
-            //maxWidth="md"
+            maxWidth="lg"
             sx={{ px: { xs: 2, md: 4 }, pl: { md: "80px" } }}
           >
             <SlideIn>
@@ -213,13 +210,12 @@ function App() {
               </Typography>
             </SlideIn>
             <ProjectList />
-            {/* <ProjectListProva /> */}
           </Container>
         </Box>
 
         {/* CONTATTI */}
         <Container
-          //maxWidth="md"
+          maxWidth="lg"
           sx={{ px: { xs: 2, md: 4 }, pl: { md: "80px" } }}
         >
           <Box
@@ -241,7 +237,6 @@ function App() {
               }}
             >
               <Contact />
-              {/* <ContactProva /> */}
             </Box>
           </Box>
         </Container>

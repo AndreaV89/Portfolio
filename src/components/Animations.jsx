@@ -1,8 +1,6 @@
-// src/components/Animations.jsx
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
-// 1. ZOOM IN ELASTICO (Per il titolo principale)
 export const ZoomIn = ({ children, delay = 0 }) => (
   <motion.div
     initial={{ scale: 0.8, opacity: 0 }}
@@ -14,19 +12,17 @@ export const ZoomIn = ({ children, delay = 0 }) => (
   </motion.div>
 );
 
-// 2. FADE UP CLASSICO (Per testi e paragrafi)
 export const FadeUp = ({ children, delay = 0, distance = 30 }) => (
   <motion.div
     initial={{ y: distance, opacity: 0 }}
     whileInView={{ y: 0, opacity: 1 }}
-    transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1], delay }} // Curva Bezier fluida
+    transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1], delay }}
     viewport={{ once: true, margin: "-50px" }}
   >
     {children}
   </motion.div>
 );
 
-// 3. SLIDE IN LATERALE (Per i numeri delle sezioni "01.", "02.")
 export const SlideIn = ({ children, direction = "left", delay = 0 }) => (
   <motion.div
     initial={{ x: direction === "left" ? -50 : 50, opacity: 0 }}
@@ -38,8 +34,6 @@ export const SlideIn = ({ children, direction = "left", delay = 0 }) => (
   </motion.div>
 );
 
-// 4. CONTENITORE A CASCATA (Per Griglie e Liste)
-// Questo avvolge il contenitore padre
 export const StaggerContainer = ({ children, staggerAmount = 0.1 }) => (
   <motion.div
     initial="hidden"
@@ -53,8 +47,6 @@ export const StaggerContainer = ({ children, staggerAmount = 0.1 }) => (
   </motion.div>
 );
 
-// 5. ELEMENTO DELLA CASCATA (Per le singole Card o Bottoni)
-// Questo va sui figli diretti del StaggerContainer
 export const StaggerItem = ({ children }) => (
   <motion.div
     variants={{
@@ -65,7 +57,7 @@ export const StaggerItem = ({ children }) => (
         transition: { type: "spring", stiffness: 50 },
       },
     }}
-    style={{ height: "100%" }} // Fix per layout CSS Grid
+    style={{ height: "100%" }}
   >
     {children}
   </motion.div>

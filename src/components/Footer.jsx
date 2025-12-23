@@ -16,7 +16,7 @@ const Footer = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          mt: 15,
+          mt: 4,
           mb: 0,
           pb: 4,
           opacity: 0.8,

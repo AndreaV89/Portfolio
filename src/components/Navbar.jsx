@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import { useState, useEffect } from "react";
 import {
   AppBar,
@@ -11,15 +10,11 @@ import {
 
 import logo from "../assets/logo.svg";
 
-// Se hai un logo SVG importalo qui, altrimenti usa un testo
-// import logo from "../assets/logo.svg";
-
 const Navbar = ({ onNavClick }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Se scrolliamo più di 50px, attiva lo sfondo
       setIsScrolled(window.scrollY > 50);
     };
 
@@ -28,7 +23,7 @@ const Navbar = ({ onNavClick }) => {
   }, []);
 
   const navLinks = [
-    { name: "Home", target: "home" }, // "home" sarà l'ID della Hero Section
+    { name: "Home", target: "home" },
     { name: "Progetti", target: "work" },
     { name: "Contatti", target: "contact" },
   ];
@@ -36,16 +31,16 @@ const Navbar = ({ onNavClick }) => {
   return (
     <AppBar
       position="fixed"
-      elevation={0} // Rimuove l'ombra di default di Material UI
+      elevation={0}
       sx={{
         backgroundColor: isScrolled ? "rgba(10, 10, 10, 0.85)" : "transparent",
-        backdropFilter: isScrolled ? "blur(12px)" : "none", // Effetto vetro sfocato
+        backdropFilter: isScrolled ? "blur(12px)" : "none",
         borderBottom: isScrolled
           ? "1px solid rgba(255, 255, 255, 0.1)"
           : "1px solid transparent",
         transition: "all 0.3s ease-in-out",
-        padding: isScrolled ? "10px 0" : "20px 0", // Si rimpicciolisce leggermente quando scrolli
-        zIndex: 1200, // Assicura che stia sopra a tutto
+        padding: isScrolled ? "10px 0" : "20px 0",
+        zIndex: 1200,
       }}
     >
       <Container
@@ -66,13 +61,12 @@ const Navbar = ({ onNavClick }) => {
               src={logo}
               alt="Logo"
               sx={{
-                height: "80px", // Ora puoi mettere un'altezza fissa e si vedrà gigante!
-                width: "auto", // Mantiene le proporzioni rettangolari naturali
+                height: "80px",
+                width: "auto",
               }}
             />
           </Box>
 
-          {/* MENU (Destra) - Visibile da tablet in su */}
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 4 }}>
             {navLinks.map((link) => (
               <Button
@@ -90,7 +84,7 @@ const Navbar = ({ onNavClick }) => {
                     backgroundColor: "transparent",
                     color: "#95e600",
                     "&::after": {
-                      width: "100%", // Linea che si espande
+                      width: "100%",
                     },
                   },
                   "&::after": {

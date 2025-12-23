@@ -1,210 +1,284 @@
-import { useState } from "react";
-import {
-  Box,
-  Typography,
-  LinearProgress,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Box, Typography, Chip } from "@mui/material";
+import { StaggerContainer, StaggerItem, FadeUp } from "./Animations";
 
 const projects = [
   {
     id: "01",
     name: "Succulentarte",
-    type: "Web",
+    description: "Catalogo di piante succulente con Dashboard di gestione.",
     stack: "React / Node.js / Vercel",
-    progress: 100,
-    status: "Deployed",
-    description: "Catalogo di piante succulente con Dashboard.",
+    image: "/succulentarte.jpg",
+    link: "https://succulentarte.com",
+    status: "Live",
   },
   {
     id: "02",
     name: "Cresta Dell'Angiolo",
-    type: "Web",
-    stack: "Wordpress / React",
-    progress: 75,
-    status: "In Development",
     description:
       "Pagina Web della Cresta dell'Angiolo, cammino escursionistico sui monti del Chianti",
+    stack: "Wordpress / React / MaterialUI",
+    image: "/cresta-angiolo.jpg",
+    link: "https://crestadellangiolo.it",
+    status: "Developing",
   },
   {
     id: "03",
     name: "Radici in Chianti",
-    type: "Web",
-    stack: "React / Wordpress",
-    progress: 45,
-    status: "Prototyping",
     description:
-      "Pagina Web di Radici in Chianti, associazione di promozione sociale e territoriale.",
+      "Portale per associazione di promozione sociale e territoriale.",
+    stack: "React / Wordpress / MaterialUI",
+    image: "/radici.jpg",
+    link: "#",
+    status: "Prototyping",
+  },
+  {
+    id: "04",
+    name: "Casanova di Bricciano",
+    description:
+      "Sito web per una azienda vinicola tra le colline di Gaiole in Chianti",
+    stack: "Wordpress / CSS / Javascript",
+    image: "/casanova-bricciano.jpg",
+    link: "https://www.casanovadibricciano.it/",
+    status: "Live",
   },
 ];
 
+const getStatusColor = (status) => {
+  switch (status) {
+    case "Live":
+      return {
+        bg: "rgba(149, 230, 0, 0.2)",
+        color: "#95e600",
+        border: "#95e600",
+      }; // Verde Neon
+    case "Developing":
+      return {
+        bg: "rgba(255, 193, 7, 0.2)",
+        color: "#ffc107",
+        border: "#ffc107",
+      }; // Giallo
+    case "Prototyping":
+      return {
+        bg: "rgba(100, 181, 246, 0.2)",
+        color: "#64b5f6",
+        border: "#64b5f6",
+      }; // Azzurro
+    case "Legacy":
+      return {
+        bg: "rgba(158, 158, 158, 0.2)",
+        color: "#bdbdbd",
+        border: "#bdbdbd",
+      }; // Grigio
+    default:
+      return { bg: "rgba(255, 255, 255, 0.1)", color: "#fff", border: "#fff" };
+  }
+};
+
 const ProjectList = () => {
-  const [hoveredProject, setHoveredProject] = useState(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
-  const handleMouseMove = (e) => {
-    if (!isMobile) {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    }
-  };
-
   return (
-    <Box sx={{ mt: 8, position: "relative" }}>
-      <Typography
-        variant="h6"
-        sx={{ fontFamily: '"Fira Code", monospace', color: "#666", mb: 4 }}
-      >
-        ~/projects &gt; ls -la
-      </Typography>
-
-      {/* LISTA DEI PROGETTI */}
-      <Box
-        sx={{ display: "flex", flexDirection: "column", gap: 1 }}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={() => setHoveredProject(null)}
-      >
-        {projects.map((project) => (
-          <Box
-            className="hover-target"
-            key={project.id}
-            onMouseEnter={() => setHoveredProject(project)}
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              padding: "15px 20px",
-              borderLeft: "2px solid transparent",
-              transition: "all 0.2s ease",
-              cursor: "none",
-              "&:hover": {
-                background: "rgba(255, 255, 255, 0.03)",
-                borderLeft: "2px solid #95e600",
-                paddingLeft: "30px",
-              },
-            }}
-          >
-            {/* Numero ID */}
-            <Typography
-              sx={{
-                fontFamily: '"Fira Code", monospace',
-                color: "#666",
-                mr: { xs: 1, md: 3 },
-                fontSize: "0.9rem",
-              }}
-            >
-              {project.id}
-            </Typography>
-
-            {/* Nome del Progetto */}
-            <Typography
-              variant="h5"
-              sx={{
-                fontWeight: 600,
-                color:
-                  hoveredProject?.id === project.id ? "#95e600" : "#e0e0e0",
-                fontFamily: '"Inter", sans-serif',
-                letterSpacing: "-0.02em",
-                fontSize: { xs: "1.2rem", md: "1.5rem" },
-              }}
-            >
-              {project.name}
-            </Typography>
-
-            {/* Estensione finta .tsx */}
-            <Typography
-              sx={{
-                ml: 1,
-                color: "#444",
-                fontFamily: '"Fira Code", monospace',
-                display: { xs: "none", sm: "block" },
-              }}
-            >
-              .tsx
-            </Typography>
-          </Box>
-        ))}
-      </Box>
-
-      {/* TOOLTIP */}
-      {!isMobile && hoveredProject && (
-        <Box
+    <Box sx={{ mt: 4 }}>
+      <FadeUp>
+        <Typography
+          variant="h2"
           sx={{
-            position: "fixed",
-            left: mousePos.x + 40,
-            top: mousePos.y + 20,
-            width: "300px",
-            backgroundColor: "rgba(10, 10, 10, 0.95)",
-            border: "1px solid #333",
-            backdropFilter: "blur(10px)",
-            padding: 3,
-            zIndex: 9999,
-            pointerEvents: "none",
-            boxShadow: "0 10px 40px rgba(0,0,0,0.5)",
+            fontWeight: 800,
+            color: "white",
+            mb: 6,
+            fontSize: { xs: "2.5rem", md: "3.5rem" },
           }}
         >
-          {/* Intestazione */}
-          <Typography
-            variant="caption"
-            sx={{
-              color: "#666",
-              fontFamily: '"Fira Code", monospace',
-              mb: 1,
-              display: "block",
-            }}
-          >
-            // Properties
-          </Typography>
+          I miei <span style={{ color: "#95e600" }}>progetti</span>
+        </Typography>
+      </FadeUp>
 
-          <Typography variant="h6" sx={{ color: "white", mb: 0.5 }}>
-            {hoveredProject.type}
-          </Typography>
+      <StaggerContainer staggerAmount={0.2}>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" },
+            gap: 4,
+          }}
+        >
+          {projects.map((project) => {
+            const statusStyle = getStatusColor(project.status);
 
-          <Typography variant="body2" sx={{ color: "#aaa", mb: 2 }}>
-            {hoveredProject.description}
-          </Typography>
+            const showLink =
+              !["Developing", "Prototyping"].includes(project.status) &&
+              project.link &&
+              project.link !== "#";
 
-          {/* Stack */}
-          <Box sx={{ mb: 2 }}>
-            <Typography
-              variant="caption"
-              sx={{ color: "#95e600", fontFamily: '"Fira Code", monospace' }}
-            >
-              Stack:
-            </Typography>
-            <Typography variant="body2" sx={{ color: "white" }}>
-              {hoveredProject.stack}
-            </Typography>
-          </Box>
+            return (
+              <StaggerItem key={project.id}>
+                <Box
+                  className="hover-target"
+                  sx={{
+                    backgroundColor: "rgba(255,255,255,0.03)",
+                    borderRadius: "16px",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    overflow: "hidden",
+                    transition: "border-color 0.3s, transform 0.3s",
+                    display: "flex",
+                    flexDirection: "column",
+                    height: "100%",
+                    "&:hover": {
+                      borderColor: "#95e600",
+                      "& .project-img": {
+                        transform: "scale(1.1)",
+                      },
+                    },
+                  }}
+                >
+                  {/* AREA IMMAGINE */}
+                  <Box
+                    sx={{
+                      position: "relative",
+                      overflow: "hidden",
+                      height: "250px",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Box
+                      component="img"
+                      src={project.image}
+                      alt={project.name}
+                      className="project-img"
+                      sx={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        transition: "transform 0.5s ease",
+                      }}
+                    />
 
-          {/* Barra di Avanzamento */}
-          <Box>
-            <Box
-              sx={{ display: "flex", justifyContent: "space-between", mb: 0.5 }}
-            >
-              <Typography variant="caption" sx={{ color: "#666" }}>
-                Status: {hoveredProject.status}
-              </Typography>
-              <Typography variant="caption" sx={{ color: "#95e600" }}>
-                {hoveredProject.progress}%
-              </Typography>
-            </Box>
-            <LinearProgress
-              variant="determinate"
-              value={hoveredProject.progress}
-              sx={{
-                height: 4,
-                backgroundColor: "#333",
-                "& .MuiLinearProgress-bar": {
-                  backgroundColor: "#95e600",
-                },
-              }}
-            />
-          </Box>
+                    {showLink && (
+                      <Box
+                        component="a"
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{
+                          position: "absolute",
+                          top: 15,
+                          right: 15,
+                          backgroundColor: "rgba(0,0,0,0.6)",
+                          backdropFilter: "blur(4px)",
+                          borderRadius: "50%",
+                          width: 35,
+                          height: 35,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          color: "white",
+                          transition: "all 0.2s",
+                          cursor: "none",
+                          "&:hover": {
+                            backgroundColor: "#95e600",
+                            color: "black",
+                            borderColor: "#95e600",
+                          },
+                        }}
+                      >
+                        <svg
+                          width="17"
+                          height="17"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                          <polyline points="15 3 21 3 21 9" />
+                          <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                      </Box>
+                    )}
+                  </Box>
+                  {/* AREA CONTENUTO */}
+                  <Box
+                    sx={{
+                      p: 3,
+                      display: "flex",
+                      flexDirection: "column",
+                      flexGrow: 1,
+                    }}
+                  >
+                    {/* HEADER: Titolo + Status Chip */}
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "flex-start",
+                        mb: 1,
+                        gap: 1,
+                      }}
+                    >
+                      <Typography
+                        variant="h5"
+                        sx={{ fontWeight: 700, color: "#fff", lineHeight: 1.2 }}
+                      >
+                        {project.name}
+                      </Typography>
+
+                      <Chip
+                        label={project.status}
+                        size="small"
+                        sx={{
+                          backgroundColor: statusStyle.bg,
+                          color: statusStyle.color,
+                          border: `1px solid ${statusStyle.border}`,
+                          fontFamily: '"Fira Code", monospace',
+                          fontWeight: "bold",
+                          fontSize: "0.65rem",
+                          height: "24px",
+                          flexShrink: 0, // Impedisce alla chip di schiacciarsi
+                        }}
+                      />
+                    </Box>
+
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: "#aaa",
+                        mb: 3,
+                        lineHeight: 1.6,
+                        wordBreak: "break-word",
+                      }}
+                    >
+                      {project.description}
+                    </Typography>
+
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        gap: 1,
+                        mt: "auto",
+                      }}
+                    >
+                      {project.stack.split(" / ").map((tech) => (
+                        <Chip
+                          key={tech}
+                          label={tech}
+                          size="small"
+                          sx={{
+                            backgroundColor: "rgba(149, 230, 0, 0.1)",
+                            color: "#95e600",
+                            fontFamily: '"Fira Code", monospace',
+                            border: "1px solid rgba(149, 230, 0, 0.2)",
+                            fontSize: "0.75rem",
+                          }}
+                        />
+                      ))}
+                    </Box>
+                  </Box>
+                </Box>
+              </StaggerItem>
+            );
+          })}
         </Box>
-      )}
+      </StaggerContainer>
     </Box>
   );
 };
