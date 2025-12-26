@@ -145,7 +145,7 @@ const Contact = () => {
             fontWeight: 800,
             color: "white",
             mb: 2,
-            fontSize: { xs: "2.5rem", md: "3.5rem" },
+            fontSize: { xs: "1.8rem", md: "3.5rem" },
           }}
         >
           Mettiti in contatto
@@ -160,7 +160,8 @@ const Contact = () => {
             mb: 2,
             fontWeight: 500,
             maxWidth: "700px",
-            lineHeight: 1.5,
+            lineHeight: 1.4,
+            fontSize: { xs: "1rem", md: "1.5rem" },
           }}
         >
           Sono sempre interessato a nuove opportunità e progetti interessanti.
@@ -257,7 +258,7 @@ const Contact = () => {
                     color: "white",
                     fontWeight: 500,
                     fontFamily: '"Fira Code", monospace',
-                    fontSize: { xs: "1rem", md: "1.25rem" },
+                    fontSize: { xs: "0.9rem", md: "1.25rem" },
                     wordBreak: "break-all",
                   }}
                 >

@@ -29,7 +29,7 @@ const ScrollToTop = () => {
       onClick={scrollToTop}
       sx={{
         position: "fixed",
-        bottom: { xs: "90px", md: "40px" },
+        bottom: { xs: "110px", md: "40px" },
         right: { xs: "20px", md: "40px" },
         zIndex: 99,
         backgroundColor: "rgba(168, 228, 0, 0.1)",

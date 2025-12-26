@@ -54,14 +54,20 @@ const Navbar = ({ onNavClick }) => {
           {/* LOGO */}
           <Box
             onClick={() => onNavClick("home")}
-            sx={{ cursor: "none", display: "flex", alignItems: "center" }}
+            sx={{
+              cursor: "none",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: { xs: "center", md: "flex-start" },
+              flexGrow: { xs: 1, md: 0 },
+            }}
           >
             <Box
               component="img"
               src={logo}
               alt="Logo"
               sx={{
-                height: "80px",
+                height: { xs: "65px", md: "80px" },
                 width: "auto",
               }}
             />

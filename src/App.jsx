@@ -241,7 +241,7 @@ function App() {
           </Box>
         </Container>
         <Footer />
-        <MobileActions />
+        <MobileActions onScrollTo={scrollToSection} />
         <ScrollToTop />
       </Layout>
     </>
